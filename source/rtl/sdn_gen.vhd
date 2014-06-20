@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-20
+-- Last update: 2014-06-21
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -41,8 +41,8 @@ begin  -- behav
   -- single
   single_s <= mult_bits(0) xor mult_bits(1);
   -- double
-  double_s <= mult_bits(2) and not(mult_bits(1)) and not(mult_bits(0)) or
-              not(mult_bits(2)) and mult_bits(1) and mult_bits(0);
+  double_s <= (mult_bits(2) and not(mult_bits(1)) and not(mult_bits(0))) or
+              (not(mult_bits(2)) and mult_bits(1) and mult_bits(0));
   -- negate
   negate_s <= mult_bits(2);
 
