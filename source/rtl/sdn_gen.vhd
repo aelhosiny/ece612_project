@@ -18,6 +18,9 @@
 -- Date        Version  Author  Description
 -- 2014-06-20  1.0      amr   Created
 -------------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity sdn_gen is
   
