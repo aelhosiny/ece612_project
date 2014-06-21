@@ -27,8 +27,8 @@ entity pp_gen_rdcn is
   port (
     multiplicand : in  std_logic_vector(31 downto 0);
     multiplier   : in  std_logic_vector(31 downto 0);
-    addin_1    : out std_logic_vector(63 downto 0);
-    addin_2    : out std_logic_vector(63 downto 0));
+    addin_1      : out std_logic_vector(63 downto 0);
+    addin_2      : out std_logic_vector(63 downto 0));
 
 end pp_gen_rdcn;
 
@@ -91,8 +91,10 @@ architecture behav of pp_gen_rdcn is
   type   pp_t is array (0 to ppn_c-1) of std_logic_vector(32 downto 0);
   signal pp_intrm_s                     : pp_t;
   type   pp_all_t is array (0 to ppn_c-1) of std_logic_vector(63 downto 0);
-  signal pp_all_s                       : pp_all_t;
+  signal pp_all_s                       : pp_all_t := (others => (others => '0'));
   signal sign_vec_s                     : std_logic_vector(ppn_c-1 downto 0);
+
+  signal result_test : unsigned(63 downto 0);
   
 begin  -- behav
 
@@ -129,7 +131,7 @@ begin  -- behav
                      pp_negy  when sdn_s(i) = "101" else
                      (others => '0');
     sign_vec_s(i) <= '1' when sdn_s(i) = "011" or sdn_s(i) = "101" else
-                     '0' when sdn_s(i) = "100" or sdn_s(i) = "010" else
+                     '0' when sdn_s(i) = "100" or sdn_s(i) = "010" or sdn_s(i) = "001" or sdn_s(i) = "000" else
                      'X';
   end generate pp_gen_all;
 
@@ -147,17 +149,17 @@ begin  -- behav
 
     pp1_14_gen : if (i > 0 and i < 15) generate
       pp_all_s(i)(2*i-2)             <= sign_vec_s(i-1);
-      pp_all_s(i)(2*i+34 downto 2*i) <= '1' & not(sign_vec_s(i)) & pp_all_s(i);
+      pp_all_s(i)(2*i+34 downto 2*i) <= '1' & not(sign_vec_s(i)) & pp_intrm_s(i);
     end generate pp1_14_gen;
 
     pp15_gen : if (i = 15) generate
       pp_all_s(i)(2*i-2)             <= sign_vec_s(i-1);
-      pp_all_s(i)(2*i+33 downto 2*i) <= not(sign_vec_s(i)) & pp_all_s(i);
+      pp_all_s(i)(2*i+33 downto 2*i) <= not(sign_vec_s(i)) & pp_intrm_s(i);
     end generate pp15_gen;
 
     pp16_gen : if (i = 16) generate
       pp_all_s(i)(2*i-2)             <= sign_vec_s(i-1);
-      pp_all_s(i)(2*i+31 downto 2*i) <= pp_all_s(i)(31 downto 0);
+      pp_all_s(i)(2*i+31 downto 2*i) <= pp_intrm_s(i)(31 downto 0);
     end generate pp16_gen;
   end generate pp_signed_gen;
 
@@ -189,4 +191,16 @@ begin  -- behav
 
 -------------------------------------------------------------------------------
 
+-- pragma synthesis_off
+  testres : process(pp_all_s)
+    variable result_v : unsigned(63 downto 0) := (others => '0');
+  begin
+    result_v := (others => '0');
+    for i in 0 to 16 loop
+      result_v := unsigned(pp_all_s(i)) + result_v;
+    end loop;  -- i
+    result_test <= result_v;
+  end process testres;
+-- pragma synthesis_on
+  
 end behav;

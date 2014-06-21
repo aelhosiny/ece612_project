@@ -48,21 +48,22 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal multiplicand : std_logic_vector(31 downto 0);
-  signal multiplier   : std_logic_vector(31 downto 0);
-  signal result       : std_logic_vector(63 downto 0);
-  signal feed_s       : std_logic := '0';
-  signal rst_n        : std_logic := '0';  -- [in]
-  signal sim_end_s    : std_logic := '0';
-
+  signal   multiplicand : std_logic_vector(31 downto 0);
+  signal   multiplier   : std_logic_vector(31 downto 0);
+  signal   result       : std_logic_vector(63 downto 0);
+  signal   feed_s       : std_logic := '0';
+  signal   rst_n        : std_logic := '0';  -- [in]
+  signal   sim_end_s    : std_logic := '0';
+  signal   result_s     : std_logic_vector(63 downto 0);
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c  : time      := 10 ns;
-  signal   sys_clk : std_logic := '0';
+  constant tclk_c       : time      := 10 ns;
+  signal   sys_clk      : std_logic := '0';
   
 begin  -- architecture behav
 
+  result_s <= std_logic_vector(unsigned(multiplicand) * unsigned(multiplier));
   -----------------------------------------------------------------------------
   -- purpose: Generate sys clk
   -- type   : 
@@ -109,9 +110,10 @@ begin  -- architecture behav
     file multiplicand_f     : text is "$INPATH/multiplicand.txt";
     variable line1          : line;
     variable line2          : line;
-    variable multiplier_v   : integer;
-    variable multiplicand_v : integer;
+    variable multiplier_v   : std_logic_vector(31 downto 0);
+    variable multiplicand_v : std_logic_vector(31 downto 0);
     variable smpl_no        : integer := 0;
+    variable result_v       : std_logic_vector(63 downto 0);
   begin
     wait for 5*tclk_c;
     wait until(falling_edge(sys_clk));
@@ -124,8 +126,8 @@ begin  -- architecture behav
       read(line1, multiplicand_v);
       readline(multiplier_f, line2);
       read(line2, multiplier_v);
-      multiplicand <= std_logic_vector(to_unsigned(multiplicand_v, 32));
-      multiplier   <= std_logic_vector(to_unsigned(multiplicand_v, 32));
+      multiplicand <= multiplicand_v;
+      multiplier   <= multiplicand_v;
       wait until(rising_edge(sys_clk));
     end loop;
     wait until(rising_edge(sys_clk));
