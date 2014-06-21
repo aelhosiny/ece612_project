@@ -66,16 +66,7 @@ architecture behav of pp_gen_rdcn is
       addin_1 : out std_logic_vector(63 downto 0);
       addin_2 : out std_logic_vector(63 downto 0));
   end component;
-  -----------------------------------------------------------------------------
-  component three2two
-    port (
-      a    : in  std_logic;
-      b    : in  std_logic;
-      cin  : in  std_logic;
-      sum  : out std_logic;
-      cout : out std_logic);
-  end component;
-  -----------------------------------------------------------------------------  
+  
   constant ppn_c : integer := 17;
   -----------------------------------------------------------------------------
 
