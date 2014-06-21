@@ -132,7 +132,7 @@ begin  -- behav
     pp_all_v := (others => (others => '0'));
     for i in 1 to 14 loop
       pp_all_v(i)(2*i+34 downto 2*i) := pp_all_s(i)(2*i+34 downto 2*i);
-      pp_all_v(i)(2*i-1)             := pp_all_s(i)(2*i-2);
+      pp_all_v(i)(2*i-2)             := pp_all_s(i)(2*i-2);
     end loop;  -- i
     pp_all_v(0)(35 downto 0)   := pp_all_s(0)(35 downto 0);
     -----------------------------------
@@ -277,6 +277,5 @@ begin  -- behav
   --pp2_msbs : for i in 0 to 15 generate
   --  pp2_s(2*i+37 downto 2*i+36) <= pp_all_s(i)(2*i+37 downto 2*i+36);
   --end generate pp2_msbs;
-
   
 end behav;

@@ -55,5 +55,6 @@ begin  -- struct
       addin_1      => adder_in1,
       addin_2      => adder_in2);
 
+  result <= std_logic_vector(unsigned(adder_in1) + unsigned(adder_in2));
 
 end struct;
