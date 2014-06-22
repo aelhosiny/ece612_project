@@ -1,0 +1,1686 @@
+(DELAYFILE
+  (SDFVERSION  "OVI 2.1")
+  (DESIGN      "multiplier_top")
+  (DATE        "Sun Jun 22 18:44:21 EEST 2014")
+  (VENDOR      "Cadence, Inc.")
+  (PROGRAM     "Encounter(R) RTL Compiler")
+  (VERSION     "v08.10-s213_1")
+  (DIVIDER     .)
+  (VOLTAGE     ::1.98)
+  (PROCESS     "::1.0")
+  (TEMPERATURE ::0.0)
+  (TIMESCALE   1ps)
+  (CELL 
+    (CELLTYPE "multiplier_top")
+    (INSTANCE)
+      (DELAY
+        (ABSOLUTE
+        (INTERCONNECT clk result_reg_s_reg_9_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_11_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_10_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_6_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_5_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_4_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_31_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_28_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_29_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_24_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_20_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_19_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_23_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_17_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_0_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_13_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_10_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_11_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_12_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_0_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_12_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_13_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_14_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_6_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_8_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_15_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_4_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_16_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_30_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_31_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_17_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_18_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_19_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_28_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_1_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_20_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_21_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_22_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_23_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_24_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_25_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_26_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_27_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_29_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_2_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_3_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_5_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_7_.CK (::0.0))
+        (INTERCONNECT clk multiplicand_reg_s_reg_9_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_10_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_11_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_14_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_15_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_16_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_18_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_1_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_21_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_22_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_25_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_26_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_27_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_2_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_30_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_3_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_7_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_8_.CK (::0.0))
+        (INTERCONNECT clk multiplier_reg_s_reg_9_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_8_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_7_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_6_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_0_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_63_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_62_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_61_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_60_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_5_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_59_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_58_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_57_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_56_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_55_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_54_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_53_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_52_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_51_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_50_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_4_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_49_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_48_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_47_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_46_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_45_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_44_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_43_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_42_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_41_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_40_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_3_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_39_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_38_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_37_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_36_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_35_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_34_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_33_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_32_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_31_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_30_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_2_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_29_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_28_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_27_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_26_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_25_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_24_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_23_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_22_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_21_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_20_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_1_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_19_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_18_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_17_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_16_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_15_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_14_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_13_.CK (::0.0))
+        (INTERCONNECT clk result_reg_s_reg_12_.CK (::0.0))
+        (INTERCONNECT multiplicand\[31\] multiplicand_reg_s_reg_31_.D (::0.0))
+        (INTERCONNECT multiplicand\[30\] multiplicand_reg_s_reg_30_.D (::0.0))
+        (INTERCONNECT multiplicand\[29\] multiplicand_reg_s_reg_29_.D (::0.0))
+        (INTERCONNECT multiplicand\[28\] multiplicand_reg_s_reg_28_.D (::0.0))
+        (INTERCONNECT multiplicand\[27\] multiplicand_reg_s_reg_27_.D (::0.0))
+        (INTERCONNECT multiplicand\[26\] multiplicand_reg_s_reg_26_.D (::0.0))
+        (INTERCONNECT multiplicand\[25\] multiplicand_reg_s_reg_25_.D (::0.0))
+        (INTERCONNECT multiplicand\[24\] multiplicand_reg_s_reg_24_.D (::0.0))
+        (INTERCONNECT multiplicand\[23\] multiplicand_reg_s_reg_23_.D (::0.0))
+        (INTERCONNECT multiplicand\[22\] multiplicand_reg_s_reg_22_.D (::0.0))
+        (INTERCONNECT multiplicand\[21\] multiplicand_reg_s_reg_21_.D (::0.0))
+        (INTERCONNECT multiplicand\[20\] multiplicand_reg_s_reg_20_.D (::0.0))
+        (INTERCONNECT multiplicand\[19\] multiplicand_reg_s_reg_19_.D (::0.0))
+        (INTERCONNECT multiplicand\[18\] multiplicand_reg_s_reg_18_.D (::0.0))
+        (INTERCONNECT multiplicand\[17\] multiplicand_reg_s_reg_17_.D (::0.0))
+        (INTERCONNECT multiplicand\[16\] multiplicand_reg_s_reg_16_.D (::0.0))
+        (INTERCONNECT multiplicand\[15\] multiplicand_reg_s_reg_15_.D (::0.0))
+        (INTERCONNECT multiplicand\[14\] multiplicand_reg_s_reg_14_.D (::0.0))
+        (INTERCONNECT multiplicand\[13\] multiplicand_reg_s_reg_13_.D (::0.0))
+        (INTERCONNECT multiplicand\[12\] multiplicand_reg_s_reg_12_.D (::0.0))
+        (INTERCONNECT multiplicand\[11\] multiplicand_reg_s_reg_11_.D (::0.0))
+        (INTERCONNECT multiplicand\[10\] multiplicand_reg_s_reg_10_.D (::0.0))
+        (INTERCONNECT multiplicand\[9\] multiplicand_reg_s_reg_9_.D (::0.0))
+        (INTERCONNECT multiplicand\[8\] multiplicand_reg_s_reg_8_.D (::0.0))
+        (INTERCONNECT multiplicand\[7\] multiplicand_reg_s_reg_7_.D (::0.0))
+        (INTERCONNECT multiplicand\[6\] multiplicand_reg_s_reg_6_.D (::0.0))
+        (INTERCONNECT multiplicand\[5\] multiplicand_reg_s_reg_5_.D (::0.0))
+        (INTERCONNECT multiplicand\[4\] multiplicand_reg_s_reg_4_.D (::0.0))
+        (INTERCONNECT multiplicand\[3\] multiplicand_reg_s_reg_3_.D (::0.0))
+        (INTERCONNECT multiplicand\[2\] multiplicand_reg_s_reg_2_.D (::0.0))
+        (INTERCONNECT multiplicand\[1\] multiplicand_reg_s_reg_1_.D (::0.0))
+        (INTERCONNECT multiplicand\[0\] multiplicand_reg_s_reg_0_.D (::0.0))
+        (INTERCONNECT multiplier\[31\] multiplier_reg_s_reg_31_.D (::0.0))
+        (INTERCONNECT multiplier\[30\] multiplier_reg_s_reg_30_.D (::0.0))
+        (INTERCONNECT multiplier\[29\] multiplier_reg_s_reg_29_.D (::0.0))
+        (INTERCONNECT multiplier\[28\] multiplier_reg_s_reg_28_.D (::0.0))
+        (INTERCONNECT multiplier\[27\] multiplier_reg_s_reg_27_.D (::0.0))
+        (INTERCONNECT multiplier\[26\] multiplier_reg_s_reg_26_.D (::0.0))
+        (INTERCONNECT multiplier\[25\] multiplier_reg_s_reg_25_.D (::0.0))
+        (INTERCONNECT multiplier\[24\] multiplier_reg_s_reg_24_.D (::0.0))
+        (INTERCONNECT multiplier\[23\] multiplier_reg_s_reg_23_.D (::0.0))
+        (INTERCONNECT multiplier\[22\] multiplier_reg_s_reg_22_.D (::0.0))
+        (INTERCONNECT multiplier\[21\] multiplier_reg_s_reg_21_.D (::0.0))
+        (INTERCONNECT multiplier\[20\] multiplier_reg_s_reg_20_.D (::0.0))
+        (INTERCONNECT multiplier\[19\] multiplier_reg_s_reg_19_.D (::0.0))
+        (INTERCONNECT multiplier\[18\] multiplier_reg_s_reg_18_.D (::0.0))
+        (INTERCONNECT multiplier\[17\] multiplier_reg_s_reg_17_.D (::0.0))
+        (INTERCONNECT multiplier\[16\] multiplier_reg_s_reg_16_.D (::0.0))
+        (INTERCONNECT multiplier\[15\] multiplier_reg_s_reg_15_.D (::0.0))
+        (INTERCONNECT multiplier\[14\] multiplier_reg_s_reg_14_.D (::0.0))
+        (INTERCONNECT multiplier\[13\] multiplier_reg_s_reg_13_.D (::0.0))
+        (INTERCONNECT multiplier\[12\] multiplier_reg_s_reg_12_.D (::0.0))
+        (INTERCONNECT multiplier\[11\] multiplier_reg_s_reg_11_.D (::0.0))
+        (INTERCONNECT multiplier\[10\] multiplier_reg_s_reg_10_.D (::0.0))
+        (INTERCONNECT multiplier\[9\] multiplier_reg_s_reg_9_.D (::0.0))
+        (INTERCONNECT multiplier\[8\] multiplier_reg_s_reg_8_.D (::0.0))
+        (INTERCONNECT multiplier\[7\] multiplier_reg_s_reg_7_.D (::0.0))
+        (INTERCONNECT multiplier\[6\] multiplier_reg_s_reg_6_.D (::0.0))
+        (INTERCONNECT multiplier\[5\] multiplier_reg_s_reg_5_.D (::0.0))
+        (INTERCONNECT multiplier\[4\] multiplier_reg_s_reg_4_.D (::0.0))
+        (INTERCONNECT multiplier\[3\] multiplier_reg_s_reg_3_.D (::0.0))
+        (INTERCONNECT multiplier\[2\] multiplier_reg_s_reg_2_.D (::0.0))
+        (INTERCONNECT multiplier\[1\] multiplier_reg_s_reg_1_.D (::0.0))
+        (INTERCONNECT multiplier\[0\] multiplier_reg_s_reg_0_.D (::0.0))
+        (INTERCONNECT tie_0_cell61.Y result_reg_s_reg_28_.D (::0.0))
+        (INTERCONNECT tie_0_cell60.Y result_reg_s_reg_1_.D (::0.0))
+        (INTERCONNECT tie_0_cell59.Y result_reg_s_reg_58_.D (::0.0))
+        (INTERCONNECT tie_0_cell58.Y result_reg_s_reg_5_.D (::0.0))
+        (INTERCONNECT tie_0_cell57.Y result_reg_s_reg_0_.D (::0.0))
+        (INTERCONNECT tie_0_cell56.Y result_reg_s_reg_17_.D (::0.0))
+        (INTERCONNECT tie_0_cell55.Y result_reg_s_reg_33_.D (::0.0))
+        (INTERCONNECT tie_0_cell54.Y result_reg_s_reg_54_.D (::0.0))
+        (INTERCONNECT tie_0_cell53.Y result_reg_s_reg_12_.D (::0.0))
+        (INTERCONNECT tie_0_cell52.Y result_reg_s_reg_11_.D (::0.0))
+        (INTERCONNECT tie_0_cell51.Y result_reg_s_reg_50_.D (::0.0))
+        (INTERCONNECT tie_0_cell50.Y result_reg_s_reg_22_.D (::0.0))
+        (INTERCONNECT tie_0_cell49.Y result_reg_s_reg_13_.D (::0.0))
+        (INTERCONNECT tie_0_cell48.Y result_reg_s_reg_62_.D (::0.0))
+        (INTERCONNECT tie_0_cell47.Y result_reg_s_reg_52_.D (::0.0))
+        (INTERCONNECT tie_0_cell46.Y result_reg_s_reg_59_.D (::0.0))
+        (INTERCONNECT tie_0_cell45.Y result_reg_s_reg_10_.D (::0.0))
+        (INTERCONNECT tie_0_cell44.Y result_reg_s_reg_4_.D (::0.0))
+        (INTERCONNECT tie_0_cell43.Y result_reg_s_reg_41_.D (::0.0))
+        (INTERCONNECT tie_0_cell42.Y result_reg_s_reg_36_.D (::0.0))
+        (INTERCONNECT tie_0_cell41.Y result_reg_s_reg_38_.D (::0.0))
+        (INTERCONNECT tie_0_cell40.Y result_reg_s_reg_46_.D (::0.0))
+        (INTERCONNECT tie_0_cell39.Y result_reg_s_reg_34_.D (::0.0))
+        (INTERCONNECT tie_0_cell38.Y result_reg_s_reg_25_.D (::0.0))
+        (INTERCONNECT tie_0_cell37.Y result_reg_s_reg_35_.D (::0.0))
+        (INTERCONNECT tie_0_cell36.Y result_reg_s_reg_27_.D (::0.0))
+        (INTERCONNECT tie_0_cell35.Y result_reg_s_reg_6_.D (::0.0))
+        (INTERCONNECT tie_0_cell34.Y result_reg_s_reg_55_.D (::0.0))
+        (INTERCONNECT tie_0_cell33.Y result_reg_s_reg_31_.D (::0.0))
+        (INTERCONNECT tie_0_cell32.Y result_reg_s_reg_23_.D (::0.0))
+        (INTERCONNECT tie_0_cell31.Y result_reg_s_reg_61_.D (::0.0))
+        (INTERCONNECT tie_0_cell30.Y result_reg_s_reg_14_.D (::0.0))
+        (INTERCONNECT tie_0_cell29.Y result_reg_s_reg_24_.D (::0.0))
+        (INTERCONNECT tie_0_cell28.Y result_reg_s_reg_16_.D (::0.0))
+        (INTERCONNECT tie_0_cell27.Y result_reg_s_reg_44_.D (::0.0))
+        (INTERCONNECT tie_0_cell26.Y result_reg_s_reg_20_.D (::0.0))
+        (INTERCONNECT tie_0_cell25.Y result_reg_s_reg_63_.D (::0.0))
+        (INTERCONNECT tie_0_cell24.Y result_reg_s_reg_40_.D (::0.0))
+        (INTERCONNECT tie_0_cell23.Y result_reg_s_reg_37_.D (::0.0))
+        (INTERCONNECT tie_0_cell22.Y result_reg_s_reg_60_.D (::0.0))
+        (INTERCONNECT tie_0_cell21.Y result_reg_s_reg_2_.D (::0.0))
+        (INTERCONNECT tie_0_cell20.Y result_reg_s_reg_26_.D (::0.0))
+        (INTERCONNECT tie_0_cell19.Y result_reg_s_reg_19_.D (::0.0))
+        (INTERCONNECT tie_0_cell18.Y result_reg_s_reg_56_.D (::0.0))
+        (INTERCONNECT tie_0_cell17.Y result_reg_s_reg_47_.D (::0.0))
+        (INTERCONNECT tie_0_cell16.Y result_reg_s_reg_15_.D (::0.0))
+        (INTERCONNECT tie_0_cell15.Y result_reg_s_reg_7_.D (::0.0))
+        (INTERCONNECT tie_0_cell14.Y result_reg_s_reg_49_.D (::0.0))
+        (INTERCONNECT tie_0_cell13.Y result_reg_s_reg_57_.D (::0.0))
+        (INTERCONNECT tie_0_cell12.Y result_reg_s_reg_43_.D (::0.0))
+        (INTERCONNECT tie_0_cell11.Y result_reg_s_reg_53_.D (::0.0))
+        (INTERCONNECT tie_0_cell10.Y result_reg_s_reg_45_.D (::0.0))
+        (INTERCONNECT tie_0_cell9.Y result_reg_s_reg_3_.D (::0.0))
+        (INTERCONNECT tie_0_cell8.Y result_reg_s_reg_32_.D (::0.0))
+        (INTERCONNECT tie_0_cell7.Y result_reg_s_reg_42_.D (::0.0))
+        (INTERCONNECT tie_0_cell6.Y result_reg_s_reg_29_.D (::0.0))
+        (INTERCONNECT tie_0_cell5.Y result_reg_s_reg_21_.D (::0.0))
+        (INTERCONNECT tie_0_cell4.Y result_reg_s_reg_39_.D (::0.0))
+        (INTERCONNECT tie_0_cell3.Y result_reg_s_reg_30_.D (::0.0))
+        (INTERCONNECT tie_0_cell2.Y result_reg_s_reg_18_.D (::0.0))
+        (INTERCONNECT tie_0_cell1.Y result_reg_s_reg_9_.D (::0.0))
+        (INTERCONNECT tie_0_cell.Y result_reg_s_reg_8_.D (::0.0))
+        (INTERCONNECT tie_0_cell.Y result_reg_s_reg_51_.D (::0.0))
+        (INTERCONNECT tie_0_cell.Y result_reg_s_reg_48_.D (::0.0))
+      )
+    )
+  )
+
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_12_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_13_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_14_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_15_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_16_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_17_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_18_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_19_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_1_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_20_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_21_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_22_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_23_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_24_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_25_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_26_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_27_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_28_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_29_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_2_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_30_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_31_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_32_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_33_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_34_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_35_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_36_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_37_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_38_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_39_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_3_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_40_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_41_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_42_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_43_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_44_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_45_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_46_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_47_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_48_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_49_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_4_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_50_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_51_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_52_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_53_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_54_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_55_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_56_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_57_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_58_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_59_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_5_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_60_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_61_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_62_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_63_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_0_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_6_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_7_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_8_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_9_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_8_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_7_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_3_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_30_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_2_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_27_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_26_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_25_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_22_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_21_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_1_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_18_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_16_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_15_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_14_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_11_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_10_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_9_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_7_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_5_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_3_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_2_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_29_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_27_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_26_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_25_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_24_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_23_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_22_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_21_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_20_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_1_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_28_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_19_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_18_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_17_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_31_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_30_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_16_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_4_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_15_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_8_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_6_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_14_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_13_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_12_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_0_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_12_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_11_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_10_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_13_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplicand_reg_s_reg_0_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_17_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_23_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_19_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_20_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_24_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_29_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_28_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_31_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_4_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_5_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE multiplier_reg_s_reg_6_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+     (TIMINGCHECK
+        (HOLD D (posedge CK) (::12))
+        (SETUP D (posedge CK) (::92))
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_10_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_11_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "DFFHQXL")
+     (INSTANCE result_reg_s_reg_9_)
+     (DELAY
+        (ABSOLUTE
+          (IOPATH CK Q (::148) (::134))
+        )
+     )
+  )
+)
