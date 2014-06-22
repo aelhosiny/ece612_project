@@ -92,7 +92,7 @@ begin  -- struct
     result_reg_s   <= result_s;
   end generate pipe_false;
 
-  
+  result <= result_reg_s;
 
   pp_gen_rdcn_1 : pp_gen_rdcn
     port map (
