@@ -527,72 +527,7 @@ The following hierarchical pin(s) in design 'multiplier_top' are undriven
 /designs/multiplier_top/instances_hier/pp_gen_rdcn_1/instances_hier/pp_rdcn_1/pins_in/pp17[31] 	 (fanout : 0)
 Total number of hierarchical undriven pins in design 'multiplier_top' : 480
 
-The following port(s) in design 'multiplier_top' are undriven
-{/designs/multiplier_top/ports_out/result[0]}
-{/designs/multiplier_top/ports_out/result[10]}
-{/designs/multiplier_top/ports_out/result[11]}
-{/designs/multiplier_top/ports_out/result[12]}
-{/designs/multiplier_top/ports_out/result[13]}
-{/designs/multiplier_top/ports_out/result[14]}
-{/designs/multiplier_top/ports_out/result[15]}
-{/designs/multiplier_top/ports_out/result[16]}
-{/designs/multiplier_top/ports_out/result[17]}
-{/designs/multiplier_top/ports_out/result[18]}
-{/designs/multiplier_top/ports_out/result[19]}
-{/designs/multiplier_top/ports_out/result[1]}
-{/designs/multiplier_top/ports_out/result[20]}
-{/designs/multiplier_top/ports_out/result[21]}
-{/designs/multiplier_top/ports_out/result[22]}
-{/designs/multiplier_top/ports_out/result[23]}
-{/designs/multiplier_top/ports_out/result[24]}
-{/designs/multiplier_top/ports_out/result[25]}
-{/designs/multiplier_top/ports_out/result[26]}
-{/designs/multiplier_top/ports_out/result[27]}
-{/designs/multiplier_top/ports_out/result[28]}
-{/designs/multiplier_top/ports_out/result[29]}
-{/designs/multiplier_top/ports_out/result[2]}
-{/designs/multiplier_top/ports_out/result[30]}
-{/designs/multiplier_top/ports_out/result[31]}
-{/designs/multiplier_top/ports_out/result[32]}
-{/designs/multiplier_top/ports_out/result[33]}
-{/designs/multiplier_top/ports_out/result[34]}
-{/designs/multiplier_top/ports_out/result[35]}
-{/designs/multiplier_top/ports_out/result[36]}
-{/designs/multiplier_top/ports_out/result[37]}
-{/designs/multiplier_top/ports_out/result[38]}
-{/designs/multiplier_top/ports_out/result[39]}
-{/designs/multiplier_top/ports_out/result[3]}
-{/designs/multiplier_top/ports_out/result[40]}
-{/designs/multiplier_top/ports_out/result[41]}
-{/designs/multiplier_top/ports_out/result[42]}
-{/designs/multiplier_top/ports_out/result[43]}
-{/designs/multiplier_top/ports_out/result[44]}
-{/designs/multiplier_top/ports_out/result[45]}
-{/designs/multiplier_top/ports_out/result[46]}
-{/designs/multiplier_top/ports_out/result[47]}
-{/designs/multiplier_top/ports_out/result[48]}
-{/designs/multiplier_top/ports_out/result[49]}
-{/designs/multiplier_top/ports_out/result[4]}
-{/designs/multiplier_top/ports_out/result[50]}
-{/designs/multiplier_top/ports_out/result[51]}
-{/designs/multiplier_top/ports_out/result[52]}
-{/designs/multiplier_top/ports_out/result[53]}
-{/designs/multiplier_top/ports_out/result[54]}
-{/designs/multiplier_top/ports_out/result[55]}
-{/designs/multiplier_top/ports_out/result[56]}
-{/designs/multiplier_top/ports_out/result[57]}
-{/designs/multiplier_top/ports_out/result[58]}
-{/designs/multiplier_top/ports_out/result[59]}
-{/designs/multiplier_top/ports_out/result[5]}
-{/designs/multiplier_top/ports_out/result[60]}
-{/designs/multiplier_top/ports_out/result[61]}
-{/designs/multiplier_top/ports_out/result[62]}
-{/designs/multiplier_top/ports_out/result[63]}
-{/designs/multiplier_top/ports_out/result[6]}
-{/designs/multiplier_top/ports_out/result[7]}
-{/designs/multiplier_top/ports_out/result[8]}
-{/designs/multiplier_top/ports_out/result[9]}
-Total number of undriven port(s) in design 'multiplier_top' : 64
+No undriven port in 'multiplier_top'
 
  Multidriven Port(s)/Pin(s)
 --------------------------
@@ -733,7 +668,72 @@ The following hierarchical pin(s) in design 'multiplier_top' are multidriven
 /designs/multiplier_top/instances_hier/mux_result_reg_s_78_14/pins_in/in_0[9]
 Total number of hierarchical multidriven pin(s) in design 'multiplier_top' : 64
 
-No multidriven ports in 'multiplier_top'
+The following ports in design 'multiplier_top' are multidriven
+/designs/multiplier_top/ports_out/result[0]
+/designs/multiplier_top/ports_out/result[10]
+/designs/multiplier_top/ports_out/result[11]
+/designs/multiplier_top/ports_out/result[12]
+/designs/multiplier_top/ports_out/result[13]
+/designs/multiplier_top/ports_out/result[14]
+/designs/multiplier_top/ports_out/result[15]
+/designs/multiplier_top/ports_out/result[16]
+/designs/multiplier_top/ports_out/result[17]
+/designs/multiplier_top/ports_out/result[18]
+/designs/multiplier_top/ports_out/result[19]
+/designs/multiplier_top/ports_out/result[1]
+/designs/multiplier_top/ports_out/result[20]
+/designs/multiplier_top/ports_out/result[21]
+/designs/multiplier_top/ports_out/result[22]
+/designs/multiplier_top/ports_out/result[23]
+/designs/multiplier_top/ports_out/result[24]
+/designs/multiplier_top/ports_out/result[25]
+/designs/multiplier_top/ports_out/result[26]
+/designs/multiplier_top/ports_out/result[27]
+/designs/multiplier_top/ports_out/result[28]
+/designs/multiplier_top/ports_out/result[29]
+/designs/multiplier_top/ports_out/result[2]
+/designs/multiplier_top/ports_out/result[30]
+/designs/multiplier_top/ports_out/result[31]
+/designs/multiplier_top/ports_out/result[32]
+/designs/multiplier_top/ports_out/result[33]
+/designs/multiplier_top/ports_out/result[34]
+/designs/multiplier_top/ports_out/result[35]
+/designs/multiplier_top/ports_out/result[36]
+/designs/multiplier_top/ports_out/result[37]
+/designs/multiplier_top/ports_out/result[38]
+/designs/multiplier_top/ports_out/result[39]
+/designs/multiplier_top/ports_out/result[3]
+/designs/multiplier_top/ports_out/result[40]
+/designs/multiplier_top/ports_out/result[41]
+/designs/multiplier_top/ports_out/result[42]
+/designs/multiplier_top/ports_out/result[43]
+/designs/multiplier_top/ports_out/result[44]
+/designs/multiplier_top/ports_out/result[45]
+/designs/multiplier_top/ports_out/result[46]
+/designs/multiplier_top/ports_out/result[47]
+/designs/multiplier_top/ports_out/result[48]
+/designs/multiplier_top/ports_out/result[49]
+/designs/multiplier_top/ports_out/result[4]
+/designs/multiplier_top/ports_out/result[50]
+/designs/multiplier_top/ports_out/result[51]
+/designs/multiplier_top/ports_out/result[52]
+/designs/multiplier_top/ports_out/result[53]
+/designs/multiplier_top/ports_out/result[54]
+/designs/multiplier_top/ports_out/result[55]
+/designs/multiplier_top/ports_out/result[56]
+/designs/multiplier_top/ports_out/result[57]
+/designs/multiplier_top/ports_out/result[58]
+/designs/multiplier_top/ports_out/result[59]
+/designs/multiplier_top/ports_out/result[5]
+/designs/multiplier_top/ports_out/result[60]
+/designs/multiplier_top/ports_out/result[61]
+/designs/multiplier_top/ports_out/result[62]
+/designs/multiplier_top/ports_out/result[63]
+/designs/multiplier_top/ports_out/result[6]
+/designs/multiplier_top/ports_out/result[7]
+/designs/multiplier_top/ports_out/result[8]
+/designs/multiplier_top/ports_out/result[9]
+Total number of multidriven port(s) in design 'multiplier_top' : 64
 
   Constant Pin(s)
   ----------------
@@ -3728,10 +3728,10 @@ Empty Modules                            0
 Unloaded Port(s)                         0 
 Unloaded Sequential Pin(s)               0 
 Assigns                                 20 
-Undriven Port(s)                        64 
+Undriven Port(s)                         0 
 Undriven Leaf Pin(s)                     0 
 Undriven hierarchical pin(s)           480 
-Multidriven Port(s)                      0 
+Multidriven Port(s)                     64 
 Multidriven Leaf Pin(s)                 64 
 Multidriven hierarchical Pin(s)         64 
 Constant Port(s)                         0 

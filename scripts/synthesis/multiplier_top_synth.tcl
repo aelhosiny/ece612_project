@@ -208,7 +208,7 @@ echo
 
 #### Time unit : ps
 #Define clock periods, each define corresponds to a clock domain
-define_clock -period 10000 -domain clk_dom -name clk -design ${DESIGN} [find / -port clk]
+define_clock -period 5550 -domain clk_dom -name clk -design ${DESIGN} [find / -port clk]
 #DC command used to  tell synthesizer to not optimize the clock tree. This is best done during placement & routing when you actually know the physical locations of the design.
 dc::set_dont_touch_network   [find /des* -clock * ]
 
@@ -219,9 +219,9 @@ echo ############################################
 echo
 
 #Constraining negative clocks uncertainity (the maximum negative skew for {rising falling} edge)
-set_attribute clock_setup_uncertainty {2000 2000} [find /* -clock clk]
+set_attribute clock_setup_uncertainty {50 50} [find /* -clock clk]
 #Constraining positive clocks uncertainity (the maximum positive skew for {rising falling} edge)
-set_attribute clock_hold_uncertainty {300 300} [find /* -clock clk]
+set_attribute clock_hold_uncertainty {5 5} [find /* -clock clk]
 #end of clock uncertainty constraints
 
 

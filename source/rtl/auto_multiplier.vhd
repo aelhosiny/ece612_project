@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Title      : multiplier top level
+-- Title      : multiplier implemented by the tool
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : multiplier_top.vhd
@@ -10,8 +10,7 @@
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
--- Description: multiplier top level. Instaniates the pp gen and reduction
---              Introduces the reduced PP's to the final CPA
+-- Description: Default multiplier implemented by synthesis tool
 -------------------------------------------------------------------------------
 -- Copyright (c) 2014 
 -------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity multiplier_top is
+entity auto_multiplier is
   generic (
     -- enable/disable pipelining
     en_pipe : boolean := false;
@@ -37,21 +36,10 @@ entity multiplier_top is
     multiplier   : in  std_logic_vector(31 downto 0);
     result       : out std_logic_vector(63 downto 0));
 
-end multiplier_top;
+end auto_multiplier;
 
 
-architecture struct of multiplier_top is
-
-  component pp_gen_rdcn
-    port (
-      multiplicand : in  std_logic_vector(31 downto 0);
-      multiplier   : in  std_logic_vector(31 downto 0);
-      addin_1      : out std_logic_vector(63 downto 0);
-      addin_2      : out std_logic_vector(63 downto 0));
-  end component;
-
-  signal adder_in1 : std_logic_vector(63 downto 0);
-  signal adder_in2 : std_logic_vector(63 downto 0);
+architecture struct of auto_multiplier is
 
   -----------------------------------------------------------------
   -- IO Registers
@@ -67,7 +55,7 @@ architecture struct of multiplier_top is
   signal multiplicand_pipe  : pipe_t;
 
 
-  signal multiplier_s, multiplicand_s : std_logic_vector(31 downto 0);
+  signal multiplier_s, multiplicand_s : std_logic_vector(32 downto 0);
   signal result_s                     : std_logic_vector(63 downto 0);
   
 begin  -- struct
@@ -92,15 +80,8 @@ begin  -- struct
     result_reg_s   <= result_s;
   end generate pipe_false;
 
-  result <= result_reg_s;
 
-  pp_gen_rdcn_1 : pp_gen_rdcn
-    port map (
-      multiplicand => multiplicand_s,
-      multiplier   => multiplier_s,
-      addin_1      => adder_in1,
-      addin_2      => adder_in2);
-
-  result_s <= std_logic_vector(unsigned(adder_in1) + unsigned(adder_in2));
+  result   <= result_reg_s;
+  result_s <= std_logic_vector(unsigned(multiplier_s) * unsigned(multiplicand_s));
 
 end struct;

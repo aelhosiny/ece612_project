@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Encounter(R) RTL Compiler v08.10-s213_1 on Sun Jun 22 18:44:15 EEST 2014
+#  Created by Encounter(R) RTL Compiler v08.10-s213_1 on Sun Jun 22 21:04:27 EEST 2014
 
 # ####################################################################
 
@@ -12,7 +12,7 @@ set_units -time 1000.0ps
 # Set the current design
 current_design multiplier_top
 
-create_clock -name "clk" -add -period 10.0 -waveform {0.0 5.0} [get_ports clk]
+create_clock -name "clk" -add -period 5.55 -waveform {0.0 2.775} [get_ports clk]
 set_dont_touch_network [get_clocks clk]
 set_load -pin_load 0.1 [get_ports {result[63]}]
 set_load -pin_load 0.1 [get_ports {result[62]}]
@@ -220,5 +220,5 @@ set_dont_use [get_lib_cells slow/RFRDX4]
 set_dont_use [get_lib_cells slow/TIEHI]
 set_dont_use [get_lib_cells slow/TIELO]
 set_dont_use [get_lib_cells slow/TTLATXL]
-set_clock_uncertainty -setup 2.0 [get_clocks clk]
-set_clock_uncertainty -hold 0.3 [get_clocks clk]
+set_clock_uncertainty -setup 0.05 [get_clocks clk]
+set_clock_uncertainty -hold 0.005 [get_clocks clk]

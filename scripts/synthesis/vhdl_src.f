@@ -4,3 +4,4 @@
 ../../source/rtl/pp_gen_rdcn.vhd
 ../../source/rtl/multiplier_top.vhd
 ../../source/rtl/three2two.vhd
+../../source/rtl/auto_multiplier.vhd
