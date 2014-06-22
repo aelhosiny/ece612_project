@@ -90,7 +90,7 @@ begin  -- struct
     multiplicand_s <= multiplicand_reg_s;
     multiplier_s   <= multiplier_reg_s;
     result_reg_s   <= result_s;
-  end generate pipe_true;
+  end generate pipe_false;
 
   
 

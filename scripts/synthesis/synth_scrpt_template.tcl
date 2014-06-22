@@ -12,22 +12,12 @@
 # Defines Environment Variables for Digital Design
 
 
-## Boolean switch to enable/disable pipelining
-set en_pipe false
-
-## Set clock period.
-#  May be changed according to number of pipeline stages defined in HDL
-set tclk 10000
-
-
-
 echo
 echo ############################################
 echo # DEFINING Environment variables
 echo ############################################
 echo
 #Defining user-specific environment variables
-
 #End of defining user-specific environment variables
 
 echo
@@ -36,20 +26,19 @@ echo # DEFINING Variables for STD Cell Library
 echo ############################################
 echo
 
-#Defining standard cell library search path
-set_attribute lib_search_path /tools/PDK/tsmc/CL018G/std/arm/2004q3v1/synopsys/
+#Defining standard cell library search path 
 #Defining standard cell libraries used
-set ENS_STD_TIMING_TYP                /tools/PDK/tsmc/CL018G/std/arm/2004q3v1/synopsys/typical.lib
-set ENS_STD_TIMING_SLOW               /tools/PDK/tsmc/CL018G/std/arm/2004q3v1/synopsys/slow.lib
-set ENS_STD_TIMING_FAST               /tools/PDK/tsmc/CL018G/std/arm/2004q3v1/synopsys/fast.lib
 #End of defining variables for STD Cell Library
-
 #Defining project root directory
-set ROOT_DIR /home/aelhosiny/projects/remal_ca/remal
+set ROOT_DIR proj_root_dir
 #End of defining project root directory
 
-set tech_lef /technology/tsmc/CL018G/std/arm/2004q3v1/lef/tsmc18_6lm.lef
-
+#Defining design library and package if exist
+#End of defining design library and package
+#Defining design blackboxes if exist
+#End of defining design blackboxes if exist
+#Defining LEF files if exist
+#End of defining LEF files
 
 
 
@@ -59,7 +48,7 @@ set tech_lef /technology/tsmc/CL018G/std/arm/2004q3v1/lef/tsmc18_6lm.lef
 set_attribute hdl_language verilog
 #The directories in the path are searched for HDL files when you issue a read_hdl command
 #script path : project/scripts/backend/synth
-set_attribute hdl_search_path ../../source/rtl
+set_attribute hdl_search_path $ROOT_DIR/source/rtl
 set_attribute information_level 4
             
                  
@@ -69,7 +58,7 @@ echo # DEFINING Top-level name
 echo ############################################
 echo
 
-set DESIGN multiplier_top
+set DESIGN design_name
 
 #End of defining top-level name                 
 
@@ -80,7 +69,7 @@ echo # DEFINING Synthesis directory
 echo ############################################
 echo
 
-set SYNTH_DIR ../../synth
+set SYNTH_DIR synth_directory
 set_attribute command_log  $SYNTH_DIR/logs/rc_cmd
 
 echo
@@ -91,7 +80,14 @@ echo
 source /tools/CADENCE/RC/etc/synth/ae_utils/toolbox/insert_tiehilo_cells.tcl
 
 
-
+echo
+echo ############################################
+echo # DEFINING LIRARY AND ITS CELLS USAGE 
+echo ############################################
+echo
+#specify the target technology library for synthesis using the library attribute
+set_attribute library $default_library
+#end of specifying the target technology library
 
 echo
 echo ############################################
@@ -99,7 +95,7 @@ echo # DEFINING LEF AND Interconnects mode
 echo ############################################
 echo
 #Defining LEF library to use
-set_attribute lef_library "$tech_lef"
+#set_attribute lef_library  "$env(ENS_STD_LEF) $SRAM_LEF"
 #End of defining LEF library to use
 
 #RTL Compiler has two modes: wireload and ple. These modes are set using the
@@ -113,13 +109,22 @@ set_attribute interconnect_mode ple
 
 echo
 echo ############################################
+echo # DEFINING CELLS that shall not be used 
+echo ############################################
+echo
+#avoid using the following cells during synthesis
+#set_attribute avoid true { scancell*  delaycell* }
+
+echo
+echo ############################################
 echo # Synthesis settings
 echo ############################################
 echo
 #generate error on blackbox
+set_attribute hdl_error_on_blackbox true 
 #end of generate error on blackbox
 #generate error on latch
-set_attribute hdl_error_on_latch true
+set_attribute hdl_error_on_latch false
 #set_attribute boundary_opto false [find /* -subdesign *]
 #set_attribute delete_unloaded_seqs false [ /]
 #set_attribute endpoint_slack_opto true /
@@ -130,7 +135,7 @@ echo # Clock Gating  settings
 echo ############################################
 echo
 #enable clock gating
-set_attr lp_insert_clock_gating true /
+set_attribute lp_insert_clock_gating $CLK_GATING_EN /
 #set_att lp_clock_gating_test_signal  /de*/design
 #set_attribute lp_clock_gating_exceptions_aware true
 
@@ -148,11 +153,13 @@ echo # READING RTL CODE
 echo ############################################
 echo
 #Reading the RTL list files and concatenating them in a single variable
-set rtl_list_vhdl [exec cat vhdl_src.f]
+set rtl_list_v    [exec cat $ROOT_DIR/backend/synth/$DESIGN/top_v.f]
+set rtl_list_vhdl [exec cat $ROOT_DIR/backend/synth/$DESIGN/top_vhdl.f]
 #Compiling design package into design library if exists
-read_hdl -vhdl  -library $DESIGN_LIB $DESIGN_PKG
 #Reading RTL code
-read_hdl -vhdl   $rtl_list_vhdl
+read_hdl -v2001  $rtl_list_v
+read_hdl -vhdl  -library $DESIGN_LIB $ROOT_DIR/source/rtl/$DESIGN_PKG
+read_hdl -vhdl   {$rtl_list_vhdl}
 #end of reading RTL code
 echo
 echo ############################################
@@ -188,12 +195,6 @@ echo
 #--------------------------------------------------------------------------
 set_attribute max_leakage_power 50000 designs\/${DESIGN}
 
-echo ############################################
-echo # Enable Pipelining
-echo ############################################
-set_attribute retime $en_pipe $DESIGN
-
-
 
 echo
 echo ############################################
@@ -204,7 +205,7 @@ echo
 
 #### Time unit : ps
 #Define clock periods, each define corresponds to a clock domain
-define_clock -period $tclk -domain clk -name clk -design ${DESIGN} [find / -port clk]
+define_clock -period 30000  -domain sysclk_domain  -name clk -design ${DESIGN} [find / -port clk]
 #DC command used to  tell synthesizer to not optimize the clock tree. This is best done during placement & routing when you actually know the physical locations of the design.
 dc::set_dont_touch_network   [find /des* -clock * ]
 
@@ -215,13 +216,9 @@ echo ############################################
 echo
 
 #Constraining negative clocks uncertainity (the maximum negative skew for {rising falling} edge)
-set_attribute clock_setup_uncertainty {2000 2000} [find /* -clock clk]
-
+set_attribute clock_setup_uncertainty {2000 2000} [find /* -clock * ]
 #Constraining positive clocks uncertainity (the maximum positive skew for {rising falling} edge)
-set_attribute clock_hold_uncertainty {300 300} [find /* -clock clk]
-
 #end of clock uncertainty constraints
-
 
 echo
 echo ############################################
@@ -249,10 +246,10 @@ echo
 #define false paths on clock domain crossing signals to avoid showing timing violations on them
 #By default, any signal crossing 2 different domains defined in the clocks constraints will be false_path
 
-#dc::set_false_path -from adc_dout[*]
-#dc::set_false_path -from adc_update
-
-
+#dc::set_false_path -from  adc_dout[*]                       
+#dc::set_false_path -from  adc_update                     
+#dc::set_false_path -from  autotune_cntrl_done_1p8v 
+  
 #End of false path definitions
 
 echo
@@ -268,10 +265,6 @@ echo ############################################
 echo #   Input and Output delays
 echo ############################################
 echo
-
-#external_delay -input 0 -edge_fall -clock [find / -clock sclk] [find / -port cs_n*]
-#external_delay -input 8.928 -edge_fall -clock [find / -clock sclk] [find / -port mosi*]
-
 
 #End of input and output delays
 
@@ -296,28 +289,96 @@ check_design ${DESIGN} -all > $SYNTH_DIR/rpt/sv_checkdesign_before_syn.rc
 #timing constraints, such as not defining all multicycle or false paths
 report timing -lint -verbose > $SYNTH_DIR/rpt/timing_lint_before_syn.rc
 #report clock_gating
-#report clock_gating -preview -gated_ff -clock [find /* -clock clk ]  > $SYNTH_DIR/rpt/clock_gated.rpt
+report clock_gating -preview -gated_ff -clock [find /* -clock clk ]  > $SYNTH_DIR/rpt/clock_gated.rpt
 #disable using scan flops (that start with SDF in std_cell library)
 #set_attribute avoid true  SDF*
 
-
+#DFT marker1
+echo
+echo #############################################
+echo # DFT :- Setup for DFT Rule Checker 
+echo #############################################
+echo
+#dft_scan_style attribute chooses the scan style either : muxed_scan(default) or lssd
+#set_attribute dft_scan_style muxed_scan
+#Define DFT pins shift_enable, scan_en, scan_clk
+define_dft shift_enable -name shift_enable   -active high                   -design ${DESIGN} shift_enable
+#shared_in option is used only if the test_mode is shared with an existing functional pin, no need for it if the test_mode is dedicated for test, scan_shift specifies to define this signal as a clock for ATPG.
+define_dft test_mode    -name scan_mode -active high -shared_in -scan_shift -design ${DESIGN} scan_en
+define_dft test_clock   -name scan_clk  -period 35714                       -design ${DESIGN} scan_clk
+#set_compatible_test_clocks -all -design ${DESIGN}
+#end of DFT marker1
+echo
 echo #############################################
 echo # synthesize 
 echo #############################################
 #The synthesize -to_generic command performs RTL optimization on your design.
 synthesize -to_generic -csa_effort high -effort high
+#DFT marker2
+#Defining the test signal used for clock gating
+set_attribute lp_clock_gating_test_signal shift_enable /designs/${DESIGN}
+#end of DFT marker2
 
 
+echo #############################################
+echo # Post synthesis editing/optimization
+echo #############################################
+echo #############################################
+echo # flattening sub-modules units (for better optimization)
+echo #############################################
+
+#delete_unloaded_undriven 
 
 # Removing assignments as Some place and route tools cannot recognize assign statements. For example, the
 #generated gate-level netlist could contain assign
 set_attribute remove_assigns true
 #DFT marker3
-
+echo
+echo #############################################
+echo # DFT :- Run DFT Rule Checker
+echo #############################################
+echo
+#DFT rule checker need to be run on the design to determine if Clock pins to the flip-flops are directly controllable from a primary input or from a user-defined test clock pin, Asynchronous set/reset pins to the flip-flops can be held to their inactive state during scan-shift mode
+check_dft_rules
+#check_dft_rules Identifies constructs in the design that prevent the flops from being included into the
+#scan chains, print all violations to a(pre-fix) report
+check_dft_rules -max_print_fanin -1 -max_print_violations -1  ${DESIGN} > $SYNTH_DIR/dft/${DESIGN}.rules.rpt
+#General design rule checker that identifies problems in the circuit, such as
+#unconnected nets, multidriven nets that impact the DFT coverage
+check_design    -all       ${DESIGN} > $SYNTH_DIR/rpt/${DESIGN}.info.pre.insertion.rpt
+#Disable auto-identification of test clocks and test-mode signals during the DFT
+#rule checking.
+set_attribute dft_identify_top_level_test_clocks false
+#If the clock path contains multi-input combinational gates that are controllable under
+#test-mode setup and that are mapped to technology components, the tool can
+#automatically create separate test clocks in the same test-clock domain for these
+#internal clock nets if you set the following attribute
+set_attribute dft_identify_internal_test_clocks no_cgic_hier
+#Specify the minimum number of scan chains to be created (recommended for block-level
+#approach to DFT):
+set_attribute dft_min_number_of_scan_chains 1          ${DESIGN}
+#To specify that the scan flip-flops triggered by different active edges of the same test
+#clock can be mixed along the same scan chain, set the following design attribute
+set_attribute dft_mix_clock_edges_in_scan_chains  true ${DESIGN}
+get_attribute dft_mix_clock_edges_in_scan_chains       ${DESIGN}
+#Specify the type of lockup element to include in the scan chain(preferred_edge_sensitive/ preferred_level_sensitive/
+#edge_sensitive/ level_sensitive)
+set_attribute dft_lockup_element_type preferred_edge_sensitive   ${DESIGN}
+#Specify the prefix to be used to name user-defined scan chains and scan data ports
+set_attribute dft_prefix DFT_
+#You can control the scan flip-flop output pin to be used for the scan data path connection (inverted/non-inverted/auto(default) #REDUNDANT
+set_attribute dft_scan_output_preference auto                ${DESIGN}
+#To come up with a conservative area and timing metrics for the design during
+#prototyping, you can map all non-scan flip-flops which pass or fail the DFT rule checks
+#to their scan-equivalent flip-flops using the dft_scan_map_mode (default is trdc_pass)
+set_attr dft_scan_map_mode force_all                         ${DESIGN}
+#Connect scan-out to scan-in during mapping (default is loopback #REDUNDANT), could be set to (ground/floating)
+set_attr dft_connect_scan_data_pins_during_mapping loopback  ${DESIGN}
+#tie low the shift_enable during mapping (default #REDUNDANT), could be set to floating 
+set_attr dft_connect_shift_enable_during_mapping tie_off     ${DESIGN}
 #Generate scripts to run Encounter Test (ET-ATPG) rule checker to ensure that the
 #design is ATPG ready.
 check_atpg_rules -directory $SYNTH_DIR/dft -library ${DESIGN}
-
 #A.N report further violations :
 report dft_violations ${DESIGN} > $SYNTH_DIR/dft/${DESIGN}.dft.violations.rpt
 #report DFT setup (basic DFT info) before actual scan insertion
@@ -332,6 +393,58 @@ echo #############################################
 synthesize -to_mapped -incremental -effort high
 
 
+#DFT marker4
+echo
+echo ##############################################
+echo # DFT:- ATPG Analysis and Test Point Insertion 
+echo ##############################################
+echo
+#To analyze the testability of your design by performing an Automatic Test Pattern Generator
+#(ATPG)-based analysis, (currently disabled as it gives error : (Error - unable to invoke 'et')) 
+#analyze_testability -library $ENS_STD_TIMING_SLOW -effort high -directory $SYNTH_DIR/dft ${DESIGN}
+
+echo
+echo ##############################################
+echo # DFT:- Set Up DFT Configuration Constraints 
+echo ##############################################
+echo
+#define the used scan chains with all the scan ports (sdi : scan input, sdo : scan output, shift_enable) . The scan output is shared with internal functional signal "-shared-out" and multiplexed using the test signal defined by "-shared_select" argument)
+define_dft scan_chain -name scan_chain0 -configure_pad scan_mode -sdi scan_in -sdo scan_out -shift_enable shift_enable -shared_select scan_mode -shared_out
+
+echo
+echo ##############################################
+echo # DFT:- Set Up DFT Configuration Constraints 
+echo ##############################################
+echo
+#The scan configuration engine always creates a top-level chain for each user-defined chain.
+#If the number of user-defined chains is less than the global minimum number of scan chains
+#constraint, the scan configuration engine creates additional top-level chains (if requested
+#through the -auto_create_chains option of the connect_scan_chains command)
+
+#preview scan insertion, auto create new chains if needed 
+connect_scan_chains -preview -auto_create_chains  -pack ${DESIGN}
+#actual scan insertion, auto create new chains if needed 
+connect_scan_chains -auto_create_chains -pack ${DESIGN}
+#preview scan insertion into the specified scan chain(s)
+connect_scan_chains -preview -chains scan_chain0  -pack ${DESIGN}
+#actual scan insertion  into the specified scan chain(s)
+connect_scan_chains -chains scan_chain0 -pack ${DESIGN}
+#report the scan chains in the design
+report dft_chains  > $SYNTH_DIR/dft/${DESIGN}.dft.chains.pre.map.rpt
+#report dft_setup after scan insertion
+report dft_setup ${DESIGN} > $SYNTH_DIR/dft/${DESIGN}.dft.setup.post.chain.rpt
+#report summary of different scan registers , their status(PASS/FAIL)
+report dft_registers ${DESIGN} > $SYNTH_DIR/dft/${DESIGN}.dft.registers.rpt
+echo
+echo #############################################
+echo # post DFT Incremental synthesis 
+echo #############################################
+echo
+#synthesize to mapped again after scan insertion
+synthesize -to_mapped -incremental -effort high
+
+#end of DFT marker4
+
 echo
 echo #############################################
 echo # Clock gating declone and share
@@ -340,8 +453,24 @@ echo
 #Declone merges clock-gating instances driven by the same inputs
 #Share extracts the enable function shared by clock-gating logic and inserts shared clock-gating logic with the common enable sub function as the enable signal
 
-#clock_gating declone -hierarchical 
-#clock_gating share -hierarchical
+clock_gating declone -hierarchical 
+clock_gating share -hierarchical
+
+#end of Clock gating declone and share
+
+
+
+echo
+echo ############################################################
+echo # Adding any needed post-syntheis design specific constraint
+echo # to be included in the sdc file
+echo ###########################################################
+echo
+
+
+
+
+
 
 
 echo
@@ -448,7 +577,20 @@ get_attribute max_trans_cost ${DESIGN}
 #get_attributes max_trans_cost ${DESIGN} >$SYNTH_DIR/rpt/transitions.rpt
 #
 
+#report timing -num_paths 10
+#DFT marker6
+#Reports the estimated average power consumption or average switching activities of the
+#design during test.
+report scan_power >  $SYNTH_DIR/rpt/scan.power.rpt
+#end of DFT marker6
 
+##### reporting specific delay paths in the design if needed
+#report timing -from   dmac_u1/OTPADRSDEL/AI[0]  -to  dmac_u1/OTPADRSDEL/AY[0]
+
+
+#reporting maximum power in fast corner (highest power)
+#note that in this technology worst case power is obtained in fast corner. Other technologies provides a ml corner for maximum leakage
+#set_attribute library $ENS_STD_TIMING_FAST_m40
  
 echo
 echo #############################################
@@ -456,63 +598,37 @@ echo # Generating Reports and SDF's for other corners
 echo #############################################
 echo
 
-
-#Setting library to ENS_STD_TIMING_TYP
-set_attribute library $ENS_STD_TIMING_TYP
-#Reporting power for ENS_STD_TIMING_TYP
-report power > $SYNTH_DIR/rpt/${DESIGN}.power_ENS_STD_TIMING_TYP.rpt
-#Reporting timing for ENS_STD_TIMING_TYP
-report timing > $SYNTH_DIR/rpt/${DESIGN}.timing_ENS_STD_TIMING_TYP.rpt
-echo
-echo #############################################
-echo # WRITING SDF for ENS_STD_TIMING_TYP
-echo #############################################
-echo
-
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.ENS_STD_TIMING_TYP.sdf
-
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.ENS_STD_TIMING_TYP.sdf
-
-
-
-#Setting library to ENS_STD_TIMING_SLOW
-set_attribute library $ENS_STD_TIMING_SLOW
-#Reporting power for ENS_STD_TIMING_SLOW
-report power > $SYNTH_DIR/rpt/${DESIGN}.power_ENS_STD_TIMING_SLOW.rpt
-#Reporting timing for ENS_STD_TIMING_SLOW
-report timing > $SYNTH_DIR/rpt/${DESIGN}.timing_ENS_STD_TIMING_SLOW.rpt
-echo
-echo #############################################
-echo # WRITING SDF for ENS_STD_TIMING_SLOW
-echo #############################################
-echo
-
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.ENS_STD_TIMING_SLOW.sdf
-
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.ENS_STD_TIMING_SLOW.sdf
-
-
-
-#Setting library to ENS_STD_TIMING_FAST
+#Setting library to fast case
 set_attribute library $ENS_STD_TIMING_FAST
-#Reporting power for ENS_STD_TIMING_FAST
-report power > $SYNTH_DIR/rpt/${DESIGN}.power_ENS_STD_TIMING_FAST.rpt
-#Reporting timing for ENS_STD_TIMING_FAST
-report timing > $SYNTH_DIR/rpt/${DESIGN}.timing_ENS_STD_TIMING_FAST.rpt
+report power > $SYNTH_DIR/rpt/${DESIGN}.power_bc.rpt
+
 echo
 echo #############################################
-echo # WRITING SDF for ENS_STD_TIMING_FAST
+echo # WRITING SDF for best case (fast corner)
 echo #############################################
 echo
 
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.ENS_STD_TIMING_FAST.sdf
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.bc.sdf
 
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.ENS_STD_TIMING_FAST.sdf
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.bc.sdf
+#Setting library to typical case
+set_attribute library $ENS_STD_TIMING_TYP
+report power > $SYNTH_DIR/rpt/${DESIGN}.power_typ.rpt
+
+echo
+echo #############################################
+echo # WRITING SDF for typical case
+echo #############################################
+echo
+
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.typ.sdf
+
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.typ.sdf
 
 #end of Generating Reports and SDF's for other corners
 
 #restoring back the default corner before saving database
-set_attribute library "$ENS_STD_TIMING_SLOW $RA2SH"
+set_attribute library $ENS_STD_TIMING_SLOW
 #end of restoring back the default corner before saving database
 echo
 echo #############################################
@@ -520,9 +636,9 @@ echo # WRITING SDF for default case
 echo #############################################
 echo
 
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.ENS_STD_TIMING_SLOW.sdf
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check -no_empty_cells -interconn interconnect > $SYNTH_DIR/gates/${DESIGN}.wc.sdf
 
-write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.ENS_STD_TIMING_SLOW.sdf
+write_sdf -version 2.1 -edges check_edge -nonegchecks -nosplit_timing_check > $SYNTH_DIR/gates/${DESIGN}_no_interconnect.wc.sdf
 
 #end of writing SDF for default case
 
@@ -549,3 +665,17 @@ echo
 #Generates all the files needed to reload the session in RTL Compiler (for example, .g, .v.
 #and .tcl files).
 write_design -basename $SYNTH_DIR/RC/${DESIGN} -gzip_files ${DESIGN}
+
+
+echo
+echo ############################################################
+echo # DONE #
+echo ############################################################
+echo
+
+echo
+echo ############################################################
+echo # Any user-defined Remarks or notes                        #
+echo ############################################################
+echo
+#exit
