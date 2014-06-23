@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Encounter(R) RTL Compiler v08.10-s213_1 on Sun Jun 22 21:04:27 EEST 2014
+#  Created by Encounter(R) RTL Compiler v08.10-s213_1 on Sun Jun 22 22:50:47 EEST 2014
 
 # ####################################################################
 
@@ -12,7 +12,7 @@ set_units -time 1000.0ps
 # Set the current design
 current_design multiplier_top
 
-create_clock -name "clk" -add -period 5.55 -waveform {0.0 2.775} [get_ports clk]
+create_clock -name "clk" -add -period 5.54 -waveform {0.0 2.77} [get_ports clk]
 set_dont_touch_network [get_clocks clk]
 set_load -pin_load 0.1 [get_ports {result[63]}]
 set_load -pin_load 0.1 [get_ports {result[62]}]
