@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 22-06-2014
+-- Last update: 2014-06-24
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ use ieee.numeric_std.all;
 entity multiplier_top is
   generic (
     -- enable/disable pipelining
-    en_pipe : boolean := false;
+    en_pipe : boolean := true;
     -- number of pipeline stages - minimum = 2
     stages  : integer := 3
     );
@@ -62,7 +62,7 @@ architecture struct of multiplier_top is
   -----------------------------------------------------------------
   -- Optional Pipelining Registers
   -----------------------------------------------------------------
-  type pipe_t is array (0 to stages-2) of std_logic_vector(31 downto 0);
+  type   pipe_t is array (0 to stages-2) of std_logic_vector(31 downto 0);
   signal multiplier_pipe    : pipe_t;
   signal multiplicand_pipe  : pipe_t;
 
@@ -87,12 +87,18 @@ begin  -- struct
   end process clk_pr;
 
   pipe_false : if (en_pipe = false) generate
-    multiplicand_s <= multiplicand_reg_s;
-    multiplier_s   <= multiplier_reg_s;
-    result_reg_s   <= result_s;
+    multiplicand_s <= multiplicand;
+    multiplier_s   <= multiplier;
+    result         <= result_s;
   end generate pipe_false;
 
-  result <= result_reg_s;
+  pipe_true : if (en_pipe = true) generate
+    multiplicand_s <= multiplicand_reg_s;
+    multiplier_s   <= multiplier_reg_s;
+    result         <= result_reg_s;
+  end generate pipe_true;
+
+
 
   pp_gen_rdcn_1 : pp_gen_rdcn
     port map (

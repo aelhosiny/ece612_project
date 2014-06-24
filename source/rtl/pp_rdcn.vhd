@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-21
+-- Last update: 2014-06-24
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -79,6 +79,8 @@ architecture behav of pp_rdcn is
   signal stage6_sum, stage6_carry : std_logic_vector(64 downto 0);
   type   stage6_fix_t is array (0 to 1) of std_logic_vector(63 downto 0);
   signal stage6_fix               : stage6_fix_t;
+
+  signal result_test : std_logic_vector(63 downto 0);
   -----------------------------------------------------------------------------
   component three2two
     port (
@@ -277,5 +279,18 @@ begin  -- behav
   --pp2_msbs : for i in 0 to 15 generate
   --  pp2_s(2*i+37 downto 2*i+36) <= pp_all_s(i)(2*i+37 downto 2*i+36);
   --end generate pp2_msbs;
+
+
+-- pragma synthesis_off
+  testres : process(pp_all_s)
+    variable result_v : unsigned(63 downto 0) := (others => '0');
+  begin
+    result_v := (others => '0');
+    for i in 0 to 16 loop
+      result_v := unsigned(pp_all_init(i)) + result_v;
+    end loop;  -- i
+    result_test <= std_logic_vector(result_v);
+  end process testres;
+-- pragma synthesis_on
   
 end behav;

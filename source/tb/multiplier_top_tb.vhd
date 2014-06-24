@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-21
+-- Last update: 2014-06-24
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -40,6 +40,7 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------  
   component multiplier_top
     port (
+      clk, rstn    : in  std_logic;
       multiplicand : in  std_logic_vector(31 downto 0);
       multiplier   : in  std_logic_vector(31 downto 0);
       result       : out std_logic_vector(63 downto 0));
@@ -48,13 +49,14 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal   multiplicand : std_logic_vector(31 downto 0);
-  signal   multiplier   : std_logic_vector(31 downto 0);
+  signal   multiplicand : std_logic_vector(31 downto 0):=(others=>'0');
+  signal   multiplier   : std_logic_vector(31 downto 0):=(others=>'0');
   signal   result       : std_logic_vector(63 downto 0);
   signal   feed_s       : std_logic := '0';
   signal   rst_n        : std_logic := '0';  -- [in]
   signal   sim_end_s    : std_logic := '0';
   signal   result_s     : std_logic_vector(63 downto 0);
+  signal   result_ref_s : std_logic_vector(63 downto 0);
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
@@ -108,8 +110,10 @@ begin  -- architecture behav
   cntrl_pr : process
     file multiplier_f       : text is "$INPATH/multiplier.txt";
     file multiplicand_f     : text is "$INPATH/multiplicand.txt";
+    file ref_file_f         : text is "$INPATH/result.txt";
     variable line1          : line;
     variable line2          : line;
+    variable line3          : line;
     variable multiplier_v   : std_logic_vector(31 downto 0);
     variable multiplicand_v : std_logic_vector(31 downto 0);
     variable smpl_no        : integer := 0;
@@ -126,8 +130,11 @@ begin  -- architecture behav
       read(line1, multiplicand_v);
       readline(multiplier_f, line2);
       read(line2, multiplier_v);
+      readline(ref_file_f, line3);
+      read(line3, result_v);
       multiplicand <= multiplicand_v;
       multiplier   <= multiplicand_v;
+      result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
     wait until(rising_edge(sys_clk));
@@ -142,6 +149,8 @@ begin  -- architecture behav
   -----------------------------------------------------------------------------
   multiplier_top_1 : multiplier_top
     port map (
+      clk          => sys_clk,
+      rstn         => rst_n,
       multiplicand => multiplicand,
       multiplier   => multiplier,
       result       => result);
