@@ -1,3 +1,4 @@
+$ROOT_DIR/source/rtl/basic_functions.vhd
 $ROOT_DIR/source/rtl/final_cpa.vhd
 $ROOT_DIR/source/rtl/sdn_gen.vhd
 $ROOT_DIR/source/rtl/pp_rdcn.vhd

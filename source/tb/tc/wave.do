@@ -62,27 +62,35 @@ add wave -noupdate -group tree /multiplier_top_tb/multiplier_top_1/pp_gen_rdcn_1
 add wave -noupdate -group tree /multiplier_top_tb/multiplier_top_1/pp_gen_rdcn_1/pp_rdcn_1/stage6_sum
 add wave -noupdate -group tree /multiplier_top_tb/multiplier_top_1/pp_gen_rdcn_1/pp_rdcn_1/stage6_carry
 add wave -noupdate -group tree /multiplier_top_tb/multiplier_top_1/pp_gen_rdcn_1/pp_rdcn_1/stage6_fix
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/rstn
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/clk
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplier
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/result
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/adder_in1
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/adder_in2
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_reg_s
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_reg_s
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/result_reg_s
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_pipe
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_pipe
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_s
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_s
-add wave -noupdate -expand -group DUT /multiplier_top_tb/multiplier_top_1/result_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/rstn
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/clk
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplier
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/result
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/adder_in1
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/adder_in2
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_reg_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_reg_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/result_reg_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_pipe
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_pipe
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplier_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/multiplicand_s
+add wave -noupdate -group DUT /multiplier_top_tb/multiplier_top_1/result_s
 add wave -noupdate /multiplier_top_tb/result_ref_s
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/opa
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/opb
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/result
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/p_vector_s
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/g_vector_s
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/p_a
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/g_a
+add wave -noupdate -expand -group CPA /multiplier_top_tb/multiplier_top_1/cpa_1/c_vector_s
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {210 ns} 0}
+WaveRestoreCursors {{Cursor 1} {115 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 214
-configure wave -valuecolwidth 100
+configure wave -valuecolwidth 145
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
 configure wave -snapdistance 10
@@ -95,4 +103,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {107 ns} {188 ns}
+WaveRestoreZoom {95 ns} {193 ns}

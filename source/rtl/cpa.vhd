@@ -22,11 +22,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.basic_functions.all;
 
 entity cpa is
   
   generic (
-    width : integer := 16);             -- adder precision
+    width : integer := 64);             -- adder precision
 
   port (
     opa    : in  std_logic_vector(width-1 downto 0);
@@ -43,20 +44,9 @@ architecture behav of cpa is
   -----------------------------------------------------------------------------
   signal p_vector_s       : std_logic_vector(width-1 downto 0);
   signal g_vector_s       : std_logic_vector(width-1 downto 0);
-  type   pg_t is array (0 to 4) of std_logic_vector(width-1 downto 0);
+  type   pg_t is array (0 to log2(width)) of std_logic_vector(width-1 downto 0);
   signal p_a, g_a         : pg_t;
   signal c_vector_s       : std_logic_vector(width-1 downto 0);
-  -----------------------------------------------------------------------------
-  -- Functions
-  -----------------------------------------------------------------------------
-  function log2 (inlength : integer) return integer is
-    variable i : integer := 1;
-  begin
-    while 2**i < inlength loop
-      i := i+1;
-    end loop;  -- i
-    return i;
-  end function log2;
 
   -----------------------------------------------------------------------------
   -- Component Declaration
@@ -88,7 +78,10 @@ begin  -- behav
   p_a(0) <= p_vector_s;
   g_a(0) <= g_vector_s;
 
-  tree_o : for i in 1 to log2(width)-1 generate
+  -----------------------------------------------------------------------------
+  -- Tree Implementation
+  -----------------------------------------------------------------------------
+  tree_o : for i in 1 to log2(width) generate
     tree_i : for j in 2**(i-1) to width-1 generate
       dot_operator_1 : dot_operator
         port map (
@@ -100,11 +93,21 @@ begin  -- behav
           p2 => p_a(i)(j));
     end generate tree_i;
     c_vector_s(2**i-1 downto 2**(i-1)) <= g_a(i)(2**i-1 downto 2**(i-1));
+    g_a(i)((2**(i-1))-1 downto 0)      <= g_a(i-1)((2**(i-1))-1 downto 0);
+    p_a(i)((2**(i-1))-1 downto 0)      <= p_a(i-1)((2**(i-1))-1 downto 0);
+    last_stage : if i = log2(width) generate
+      c_vector_s(width-1 downto 2**i) <= g_a(i)(width-1 downto 2**i);
+    end generate last_stage;
   end generate tree_o;
 
+  c_vector_s(0) <= g_a(0)(0);
+  -----------------------------------------------------------------------------
+  -- Result Selection
+  -----------------------------------------------------------------------------
   get_sum : for i in 1 to width-1 generate
     result(i) <= p_vector_s(i) xor c_vector_s(i-1);
   end generate get_sum;
+  result(0) <= p_vector_s(0);
 
   
 end behav;

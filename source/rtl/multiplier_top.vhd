@@ -26,7 +26,7 @@ use ieee.numeric_std.all;
 entity multiplier_top is
   generic (
     -- enable/disable pipelining
-    en_pipe : boolean := true;
+    en_pipe : boolean := false;
     -- number of pipeline stages - minimum = 2
     stages  : integer := 3
     );
@@ -49,6 +49,16 @@ architecture struct of multiplier_top is
       addin_1      : out std_logic_vector(63 downto 0);
       addin_2      : out std_logic_vector(63 downto 0));
   end component;
+
+  component cpa
+    generic (
+      width : integer);
+    port (
+      opa    : in  std_logic_vector(width-1 downto 0);
+      opb    : in  std_logic_vector(width-1 downto 0);
+      result : out std_logic_vector(width-1 downto 0));
+  end component;
+
 
   signal adder_in1 : std_logic_vector(63 downto 0);
   signal adder_in2 : std_logic_vector(63 downto 0);
@@ -99,7 +109,6 @@ begin  -- struct
   end generate pipe_true;
 
 
-
   pp_gen_rdcn_1 : pp_gen_rdcn
     port map (
       multiplicand => multiplicand_s,
@@ -107,6 +116,16 @@ begin  -- struct
       addin_1      => adder_in1,
       addin_2      => adder_in2);
 
-  result_s <= std_logic_vector(unsigned(adder_in1) + unsigned(adder_in2));
+  cpa_1: cpa
+    generic map (
+      width => 64)
+    port map (
+      opa    => adder_in1,
+      opb    => adder_in2,
+      result => result_s);
+  
+
+  
+  --result_s <= std_logic_vector(unsigned(adder_in1) + unsigned(adder_in2));
 
 end struct;
