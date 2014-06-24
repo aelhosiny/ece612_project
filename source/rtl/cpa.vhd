@@ -27,7 +27,7 @@ use work.basic_functions.all;
 entity cpa is
   
   generic (
-    width : integer := 64);             -- adder precision
+    width : integer := 32);             -- adder precision
 
   port (
     opa    : in  std_logic_vector(width-1 downto 0);

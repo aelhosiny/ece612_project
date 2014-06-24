@@ -8,3 +8,4 @@ $ROOT_DIR/source/rtl/three2two.vhd
 $ROOT_DIR/source/rtl/cpa.vhd
 $ROOT_DIR/source/rtl/dot_operator.vhd
 $ROOT_DIR/source/tb/multiplier_top_tb.vhd
+$ROOT_DIR/source/tb/cpa_tb.vhd
