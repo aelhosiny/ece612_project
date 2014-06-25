@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-24
+-- Last update: 2014-06-26
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -39,6 +39,12 @@ architecture behav of multiplier_top_tb is
   -- Components declarations
   -----------------------------------------------------------------------------  
   component multiplier_top
+    generic (
+      -- enable/disable pipelining
+      en_pipe : boolean := false;
+      -- number of pipeline stages - minimum = 2
+      stages  : integer := 3
+      );    
     port (
       clk, rstn    : in  std_logic;
       multiplicand : in  std_logic_vector(31 downto 0);
@@ -49,19 +55,19 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal   multiplicand : std_logic_vector(31 downto 0):=(others=>'0');
-  signal   multiplier   : std_logic_vector(31 downto 0):=(others=>'0');
+  signal   multiplicand : std_logic_vector(31 downto 0) := (others => '0');
+  signal   multiplier   : std_logic_vector(31 downto 0) := (others => '0');
   signal   result       : std_logic_vector(63 downto 0);
-  signal   feed_s       : std_logic := '0';
-  signal   rst_n        : std_logic := '0';  -- [in]
-  signal   sim_end_s    : std_logic := '0';
+  signal   feed_s       : std_logic                     := '0';
+  signal   rst_n        : std_logic                     := '0';  -- [in]
+  signal   sim_end_s    : std_logic                     := '0';
   signal   result_s     : std_logic_vector(63 downto 0);
   signal   result_ref_s : std_logic_vector(63 downto 0);
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c       : time      := 10 ns;
-  signal   sys_clk      : std_logic := '0';
+  constant tclk_c       : time                          := 10 ns;
+  signal   sys_clk      : std_logic                     := '0';
   
 begin  -- architecture behav
 
@@ -133,7 +139,7 @@ begin  -- architecture behav
       readline(ref_file_f, line3);
       read(line3, result_v);
       multiplicand <= multiplicand_v;
-      multiplier   <= multiplicand_v;
+      multiplier   <= multiplier_v;
       result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;

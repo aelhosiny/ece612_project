@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 25-06-2014
+-- Last update: 2014-06-26
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ end entity cpa_tb;
 
 architecture behav of cpa_tb is
 
-  constant width_c : integer := 32;
+  constant width_c : integer := 16;
 
   -----------------------------------------------------------------------------
   -- Components declarations
@@ -50,19 +50,21 @@ architecture behav of cpa_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal opa          : std_logic_vector(width_c-1 downto 0) := (others => '0');
-  signal opb          : std_logic_vector(width_c-1 downto 0) := (others => '0');
-  signal result       : std_logic_vector(width_c-1 downto 0);
-  signal feed_s       : std_logic                            := '0';
-  signal rst_n        : std_logic                            := '0';  -- [in]
-  signal sim_end_s    : std_logic                            := '0';
-  signal result_s     : std_logic_vector(width_c-1 downto 0);
-  signal result_ref_s : std_logic_vector(width_c-1 downto 0);
+  signal   opa          : std_logic_vector(width_c-1 downto 0) := (others => '0');
+  signal   opb          : std_logic_vector(width_c-1 downto 0) := (others => '0');
+  signal   result       : std_logic_vector(width_c-1 downto 0);
+  signal   feed_s       : std_logic                            := '0';
+  signal   rst_n        : std_logic                            := '0';  -- [in]
+  signal   sim_end_s    : std_logic                            := '0';
+  signal   result_s     : std_logic_vector(width_c-1 downto 0);
+  signal   result_ref_s : std_logic_vector(width_c-1 downto 0);
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c     : time                                 := 10 ns;
-  signal sys_clk      : std_logic                            := '0';
+  constant tclk_c       : time                                 := 10 ns;
+  signal   sys_clk      : std_logic                            := '0';
+  signal   error_s      : std_logic                            := '0';
+  signal   check_acc    : std_logic                            := '0';
   
 begin  -- architecture behav
 
@@ -82,6 +84,25 @@ begin  -- architecture behav
     wait;
   end process sys_clk_gen;
 
+  -----------------------------------------------------------------------------
+  -- Checker
+  -----------------------------------------------------------------------------
+  checker : process
+    variable check_acc_v : std_logic := '0';
+    variable error_v     : std_logic := '0';
+  begin
+    wait until(rising_edge(feed_s));
+    while(feed_s = '1') loop
+      wait until(falling_edge(sys_clk));
+      error_v := '0';
+      if (result_s /= result) then
+        error_v := '1';
+      end if;
+      check_acc_v := check_acc or error_v;
+      check_acc   <= check_acc_v;
+      error_s     <= error_v;
+    end loop;
+  end process checker;
   -----------------------------------------------------------------------------
   -- purpose: Write interpolator output to file
   -- type   : 
@@ -134,10 +155,11 @@ begin  -- architecture behav
       readline(ref_file_f, line3);
       read(line3, result_v);
       opa          <= opa_v;
-      opb          <= opa_v;
+      opb          <= opb_v;
       result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
+    feed_s    <= '0';
     wait until(rising_edge(sys_clk));
     rst_n     <= '0';
     sim_end_s <= '1';

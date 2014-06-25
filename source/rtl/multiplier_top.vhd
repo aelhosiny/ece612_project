@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 25-06-2014
+-- Last update: 2014-06-25
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -83,18 +83,6 @@ architecture struct of multiplier_top is
 begin  -- struct
 
 
-  clk_pr : process(clk, rstn)
-  begin
-    if (rstn = '0') then
-      multiplier_reg_s   <= (others => '0');
-      multiplicand_reg_s <= (others => '0');
-      result_reg_s       <= (others => '0');
-    elsif (rising_edge(clk)) then
-      multiplier_reg_s   <= multiplier;
-      multiplicand_reg_s <= multiplicand;
-      result_reg_s       <= result_s;
-    end if;
-  end process clk_pr;
 
   pipe_false : if (en_pipe = false) generate
     multiplicand_s <= multiplicand;
@@ -103,6 +91,20 @@ begin  -- struct
   end generate pipe_false;
 
   pipe_true : if (en_pipe = true) generate
+
+    clk_pr : process(clk, rstn)
+    begin
+      if (rstn = '0') then
+        multiplier_reg_s   <= (others => '0');
+        multiplicand_reg_s <= (others => '0');
+        result_reg_s       <= (others => '0');
+      elsif (rising_edge(clk)) then
+        multiplier_reg_s   <= multiplier;
+        multiplicand_reg_s <= multiplicand;
+        result_reg_s       <= result_s;
+      end if;
+    end process clk_pr;
+
     multiplicand_s <= multiplicand_reg_s;
     multiplier_s   <= multiplier_reg_s;
     result         <= result_reg_s;
@@ -116,16 +118,16 @@ begin  -- struct
       addin_1      => adder_in1,
       addin_2      => adder_in2);
 
-  cpa_1: cpa
+  cpa_1 : cpa
     generic map (
       width => 64)
     port map (
       opa    => adder_in1,
       opb    => adder_in2,
       result => result_s);
-  
 
-  
+
+
   --result_s <= std_logic_vector(unsigned(adder_in1) + unsigned(adder_in2));
 
 end struct;
