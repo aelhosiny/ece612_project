@@ -1,6 +1,6 @@
 ######################################################################
 
-# Created by Encounter(R) RTL Compiler v08.10-s213_1 on Sun Jun 22 22:50:47 EEST 2014
+# Created by Encounter(R) RTL Compiler v08.10-s213_1 on Wed Jun 25 18:30:38 EEST 2014
 
 # This file contains the RC script for /designs/multiplier_top
 
@@ -26,8 +26,8 @@ set_attribute -quiet clock_hold_uncertainty {5.0 5.0} /designs/multiplier_top/ti
 set_attribute dft_scan_style muxed_scan /
 #END DFT SECTION
 set_attribute -quiet hdl_user_name multiplier_top /designs/multiplier_top
-set_attribute -quiet hdl_filelist { {default -vhdl1993 {} {/scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/final_cpa.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/sdn_gen.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/pp_rdcn.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/pp_gen_rdcn.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/multiplier_top.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/three2two.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/auto_multiplier.vhd}}} /designs/multiplier_top
 set_attribute -quiet hdl_parameters {{en_pipe 1'h0 0} {stages 3 0}} /designs/multiplier_top
+set_attribute -quiet hdl_filelist { {default -vhdl1993 {} {/scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/basic_functions.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/final_cpa.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/sdn_gen.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/pp_rdcn.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/pp_gen_rdcn.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/multiplier_top.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/three2two.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/auto_multiplier.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/cpa.vhd /scratch3/aelhosiny/masters/ece612_project/scripts/synthesis/../../source/rtl/dot_operator.vhd}}} /designs/multiplier_top
 set_attribute -quiet max_leakage_power 50000.0 /designs/multiplier_top
 set_attribute -quiet max_transition 1000.0 /designs/multiplier_top
 set_attribute -quiet min_transition 5.0 /designs/multiplier_top
@@ -226,4 +226,3 @@ set_attribute -quiet external_pin_cap {100.0 100.0} {/designs/multiplier_top/por
 set_attribute -quiet max_transition 500.0 {/designs/multiplier_top/ports_out/result[1]}
 set_attribute -quiet external_pin_cap {100.0 100.0} {/designs/multiplier_top/ports_out/result[0]}
 set_attribute -quiet max_transition 500.0 {/designs/multiplier_top/ports_out/result[0]}
-set_attribute -quiet preserve true /designs/multiplier_top/nets/clk

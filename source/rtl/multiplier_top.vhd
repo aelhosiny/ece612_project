@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-24
+-- Last update: 25-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ use ieee.numeric_std.all;
 entity multiplier_top is
   generic (
     -- enable/disable pipelining
-    en_pipe : boolean := false;
+    en_pipe : boolean := true;
     -- number of pipeline stages - minimum = 2
     stages  : integer := 3
     );

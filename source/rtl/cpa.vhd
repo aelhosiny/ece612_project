@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-24
--- Last update: 2014-06-24
+-- Last update: 25-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ begin  -- behav
     g_a(i)((2**(i-1))-1 downto 0)      <= g_a(i-1)((2**(i-1))-1 downto 0);
     p_a(i)((2**(i-1))-1 downto 0)      <= p_a(i-1)((2**(i-1))-1 downto 0);
     last_stage : if i = log2(width) generate
-      c_vector_s(width-1 downto 2**i) <= g_a(i)(width-1 downto 2**i);
+      c_vector_s(width-1 downto 2**i-1) <= g_a(i)(width-1 downto 2**i-1);
     end generate last_stage;
   end generate tree_o;
 
