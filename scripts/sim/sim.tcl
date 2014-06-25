@@ -25,16 +25,15 @@ set scr_dir [exec pwd]
 
 set ROOT_DIR [regsub /scripts/sim $scr_dir ""]
 
-set env(ROOT_DIR) $ROOT_DIR
-
 set list_file $ROOT_DIR/source/tb/vhdl_src.f
 set simdir $ROOT_DIR/sim
 set INPATH $ROOT_DIR/source/tb/$toplevel
-set env(INPATH) $INPATH
-set OUTPATH $simdir
-set env(OUTPATH) $OUTPATH
+set OUTPATH $simdir/$toplevel
 set tcdir $INPATH
 
+set env(INPATH) $INPATH
+set env(OUTPATH) $OUTPATH
+set env(ROOT_DIR) $ROOT_DIR
 
 if { [file exists $simdir] == 0} {
 	puts "==== create compile directory ===="
