@@ -41,8 +41,8 @@ if { [file exists $simdir] == 0} {
 	exec mkdir -p $simdir
 } else {
 	puts "==== cleanup simulation directory ===="
-	exec rm -fr $simdir
-	exec mkdir -p $simdir
+	exec rm -fr $simdir/work
+   exec rm -fr $simdir/$toplevel
 	exec mkdir -p $simdir/$toplevel
 }
 
