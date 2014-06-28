@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-24
+-- Last update: 2014-06-28
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ end pp_rdcn;
 architecture behav of pp_rdcn is
 
   type   pp_all_t is array (0 to 16) of std_logic_vector(63 downto 0);
-  signal pp_all_s                 : pp_all_t;
+  signal pp_all_s                 : pp_all_t;  -- := (others => (others => '0'));
   signal pp_all_init              : pp_all_t;
   type   stage1_out_t is array (0 to 4) of std_logic_vector(64 downto 0);
   signal stage1_sum, stage1_carry : stage1_out_t;
@@ -107,46 +107,95 @@ begin  -- behav
   -----------------------------------------------------------------------------
   -- Assign input PP's to the array
   -----------------------------------------------------------------------------
-  pp_all_s(0)  <= pp1;
-  pp_all_s(1)  <= pp2;
-  pp_all_s(2)  <= pp3;
-  pp_all_s(3)  <= pp4;
-  pp_all_s(4)  <= pp5;
-  pp_all_s(5)  <= pp6;
-  pp_all_s(6)  <= pp7;
-  pp_all_s(7)  <= pp8;
-  pp_all_s(8)  <= pp9;
-  pp_all_s(9)  <= pp10;
-  pp_all_s(10) <= pp11;
-  pp_all_s(11) <= pp12;
-  pp_all_s(12) <= pp13;
-  pp_all_s(13) <= pp14;
-  pp_all_s(14) <= pp15;
-  pp_all_s(15) <= pp16;
-  pp_all_s(16) <= pp17;
+  wallace_tree : process(pp1, pp10, pp11, pp12, pp13, pp14, pp15, pp16, pp17,
+                         pp2, pp3, pp4, pp5, pp6, pp7, pp8, pp9)
+    variable pp_all_v : pp_all_t;
+  begin
+    pp_all_v                 := (others => (others => '0'));
+    pp_all_v(0)(63 downto 0) := pp16(63) & pp15(62 downto 61) & pp14(60 downto 59) & pp13(58 downto 57) &
+                                pp12(56 downto 55) & pp11(54 downto 53) & pp10(52 downto 51) & pp9(50 downto 49) &
+                                pp8(48 downto 47) & pp7(46 downto 45) & pp6(44 downto 43) & pp5(42 downto 41) &
+                                pp4(40 downto 39) & pp3(38 downto 37) & pp2(36) & pp1(35 downto 2) & '0' & pp1(0);
+    
+    pp_all_v(1)(63 downto 0) := pp17(63) & pp16(62 downto 61) & pp15(60 downto 59) & pp14(58 downto 57) & pp13(56 downto 55) &
+                                pp12(54 downto 53) & pp11(52 downto 51) & pp10(50 downto 49) & pp9(48 downto 47) &
+                                pp8(46 downto 45) & pp7(44 downto 43) & pp6(42 downto 41) & pp5(40 downto 39) & pp4(38 downto 37) &
+                                pp3(36) & pp2(35 downto 2) & '0' & pp2(0);
+    
+    pp_all_v(2)(62 downto 2) := pp17(62 downto 61) & pp16(60 downto 59) & pp15(58 downto 57) & pp14(56 downto 55) &
+                                pp13(54 downto 53) & pp12(52 downto 51) & pp11(50 downto 49) & pp10(48 downto 47) &
+                                pp9(46 downto 45) & pp8(44 downto 43) & pp7(42 downto 41) & pp6(40 downto 39) &
+                                pp5(38 downto 37) & pp4(36) & pp3(35 downto 4) & '0' & pp3(2);
+    
+    pp_all_v(3)(60 downto 4) := pp17(60 downto 59) & pp16(58 downto 57) & pp15(56 downto 55) & pp14(54 downto 53) &
+                                pp13(52 downto 51) & pp12(50 downto 49) & pp11(48 downto 47) & pp10(46 downto 45) &
+                                pp9(44 downto 43) & pp8(42 downto 41) & pp7(40 downto 39) & pp6(38 downto 37) & pp5(36) &
+                                pp4(35 downto 6) & '0' & pp4(4);
+    
+    pp_all_v(4)(58 downto 6) := pp17(58 downto 57) & pp16(56 downto 55) & pp15(54 downto 53) & pp14(52 downto 51) &
+                                pp13(50 downto 49) & pp12(48 downto 47) & pp11(46 downto 45) & pp10(44 downto 43) &
+                                pp9(42 downto 41) & pp8(40 downto 39) & pp7(38 downto 37) & pp6(36) & pp5(35 downto 8) & '0' & pp5(6);
+    
+    pp_all_v(5)(56 downto 8) := pp17(56 downto 55) & pp16(54 downto 53) & pp15(52 downto 51) & pp14(50 downto 49) &
+                                pp13(48 downto 47) & pp12(46 downto 45) & pp11(44 downto 43) & pp10(42 downto 41) &
+                                pp9(40 downto 39) & pp8(38 downto 37) & pp7(36) & pp6(35 downto 10) & '0' & pp6(8);
+    
+    pp_all_v(6)(54 downto 10) := pp17(54 downto 53) & pp16(52 downto 51) & pp15(50 downto 49) & pp14(48 downto 47) &
+                                 pp13(46 downto 45) & pp12(44 downto 43) & pp11(42 downto 41) & pp10(40 downto 39) &
+                                 pp9(38 downto 37) & pp8(36) & pp7(35 downto 12) & '0' & pp7(10);
+    
+    pp_all_v(7)(52 downto 12) := pp17(52 downto 51) & pp16(50 downto 49) & pp15(48 downto 47) & pp14(46 downto 45) &
+                                 pp13(44 downto 43) & pp12(42 downto 41) & pp11(40 downto 39) & pp10(38 downto 37) &
+                                 pp9(36) & pp8(35 downto 14) & '0' & pp8(12);
+    
+    pp_all_v(8)(50 downto 14) := pp17(50 downto 49) & pp16(48 downto 47) & pp15(46 downto 45) & pp14(44 downto 43) &
+                                 pp13(42 downto 41) & pp12(40 downto 39) & pp11(38 downto 37) & pp10(36) & pp9(35 downto 16) & '0' & pp9(14);
+    
+    pp_all_v(9)(48 downto 16) := pp17(48 downto 47) & pp16(46 downto 45) & pp15(44 downto 43) & pp14(42 downto 41) &
+                                 pp13(40 downto 39) & pp12(38 downto 37) & pp11(36) & pp10(35 downto 18) & '0' & pp10(16);
+    
+    pp_all_v(10)(46 downto 18) := pp17(46 downto 45) & pp16(44 downto 43) & pp15(42 downto 41) & pp14(40 downto 39) &
+                                  pp13(38 downto 37) & pp12(36) & pp11(35 downto 20) & '0' & pp11(18);
+    
+    pp_all_v(11)(44 downto 20) := pp17(44 downto 43) & pp16(42 downto 41) & pp15(40 downto 39) & pp14(38 downto 37) &
+                                  pp13(36) & pp12(35 downto 22) & '0' & pp12(20);
+    
+    pp_all_v(12)(42 downto 22) := pp17(42 downto 41) & pp16(40 downto 39) & pp15(38 downto 37) & pp14(36) &
+                                  pp13(35 downto 24) & '0' & pp13(22);
+    pp_all_v(13)(40 downto 24) := pp17(40 downto 39) & pp16(38 downto 37) & pp15(36) &
+                                  pp14(35 downto 26) & '0' & pp14(24);
+    
+    pp_all_v(14)(38 downto 26) := pp17(38 downto 37) & pp16(36) & pp15(35 downto 28) & '0' & pp15(26);
+
+    pp_all_v(15)(36 downto 28) := pp17(36) & pp16(35 downto 30) & '0' & pp16(28);
+
+    pp_all_v(16)(35 downto 30) := pp17(35 downto 32) & '0' & pp17(30);
+
+    pp_all_s <= pp_all_v;
+  end process wallace_tree;
 
   -----------------------------------------------------------------------------
   -- Intialize all array by zero then assign occupied values to overwrite zeros
   -----------------------------------------------------------------------------
-  zero_init : process(pp_all_s)
-    variable pp_all_v : pp_all_t;
-  begin
-    pp_all_v := (others => (others => '0'));
-    for i in 1 to 14 loop
-      pp_all_v(i)(2*i+34 downto 2*i) := pp_all_s(i)(2*i+34 downto 2*i);
-      pp_all_v(i)(2*i-2)             := pp_all_s(i)(2*i-2);
-    end loop;  -- i
-    pp_all_v(0)(35 downto 0)   := pp_all_s(0)(35 downto 0);
-    -----------------------------------
-    pp_all_v(15)(28)           := pp_all_s(15)(28);
-    pp_all_v(15)(63 downto 30) := pp_all_s(15)(63 downto 30);
-    -----------------------------------
-    pp_all_v(16)(30)           := pp_all_s(16)(30);
-    pp_all_v(16)(63 downto 32) := pp_all_s(16)(63 downto 32);
-    -----------------------------------
-    pp_all_init                <= pp_all_v;
-  end process zero_init;
-
+  --zero_init : process(pp_all_s)
+  --  variable pp_all_v : pp_all_t;
+  --begin
+  --  pp_all_v := (others => (others => '0'));
+  --  for i in 1 to 14 loop
+  --    pp_all_v(i)(2*i+34 downto 2*i) := pp_all_s(i)(2*i+34 downto 2*i);
+  --    pp_all_v(i)(2*i-2)             := pp_all_s(i)(2*i-2);
+  --  end loop;  -- i
+  --  pp_all_v(0)(35 downto 0)   := pp_all_s(0)(35 downto 0);
+  --  -----------------------------------
+  --  pp_all_v(15)(28)           := pp_all_s(15)(28);
+  --  pp_all_v(15)(63 downto 30) := pp_all_s(15)(63 downto 30);
+  --  -----------------------------------
+  --  pp_all_v(16)(30)           := pp_all_s(16)(30);
+  --  pp_all_v(16)(63 downto 32) := pp_all_s(16)(63 downto 32);
+  --  -----------------------------------
+  --  pp_all_init                <= pp_all_v;
+  --end process zero_init;
+  pp_all_init <= pp_all_s;
   -----------------------------------------------------------------------------
   -- Instantiate compressors - First Stage Compression
   -----------------------------------------------------------------------------
@@ -282,7 +331,7 @@ begin  -- behav
 
 
 -- pragma synthesis_off
-  testres : process(pp_all_s)
+  testres : process(pp_all_init)
     variable result_v : unsigned(63 downto 0) := (others => '0');
   begin
     result_v := (others => '0');

@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 26-06-2014
+-- Last update: 2014-06-28
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -55,20 +55,20 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal multiplicand : std_logic_vector(31 downto 0) := (others => '0');
-  signal multiplier   : std_logic_vector(31 downto 0) := (others => '0');
-  signal result       : std_logic_vector(63 downto 0);
-  signal feed_s       : std_logic                     := '0';
-  signal rst_n        : std_logic                     := '0';  -- [in]
-  signal sim_end_s    : std_logic                     := '0';
-  signal result_ref_s : std_logic_vector(63 downto 0);
-  signal error_s      : std_logic                     := '0';
-  signal check_acc    : std_logic                     := '0';
+  signal   multiplicand : std_logic_vector(31 downto 0) := (others => '0');
+  signal   multiplier   : std_logic_vector(31 downto 0) := (others => '0');
+  signal   result       : std_logic_vector(63 downto 0);
+  signal   feed_s       : std_logic                     := '0';
+  signal   rst_n        : std_logic                     := '0';  -- [in]
+  signal   sim_end_s    : std_logic                     := '0';
+  signal   result_ref_s : std_logic_vector(63 downto 0);
+  signal   error_s      : std_logic                     := '0';
+  signal   check_acc    : std_logic                     := '0';
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c     : time                          := 10 ns;
-  signal sys_clk      : std_logic                     := '0';
+  constant tclk_c       : time                          := 10 ns;
+  signal   sys_clk      : std_logic                     := '0';
   
 begin  -- architecture behav
 
@@ -163,7 +163,7 @@ begin  -- architecture behav
       read(line3, result_v);
       multiplicand <= multiplicand_v;
       multiplier   <= multiplier_v;
-      result_ref_s <= result_v;
+      --result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
     wait until(rising_edge(sys_clk));
