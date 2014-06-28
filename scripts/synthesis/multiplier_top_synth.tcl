@@ -211,7 +211,7 @@ echo
 
 #### Time unit : ps
 #Define clock periods, each define corresponds to a clock domain
-define_clock -period 5540 -domain clk_dom -name clk -design ${DESIGN} [find / -port clk]
+define_clock -period 5850 -domain clk_dom -name clk -design ${DESIGN} [find / -port clk]
 #DC command used to  tell synthesizer to not optimize the clock tree. This is best done during placement & routing when you actually know the physical locations of the design.
 dc::set_dont_touch_network   [find /des* -clock * ]
 

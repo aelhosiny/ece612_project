@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-26
+-- Last update: 26-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -55,23 +55,24 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal   multiplicand : std_logic_vector(31 downto 0) := (others => '0');
-  signal   multiplier   : std_logic_vector(31 downto 0) := (others => '0');
-  signal   result       : std_logic_vector(63 downto 0);
-  signal   feed_s       : std_logic                     := '0';
-  signal   rst_n        : std_logic                     := '0';  -- [in]
-  signal   sim_end_s    : std_logic                     := '0';
-  signal   result_s     : std_logic_vector(63 downto 0);
-  signal   result_ref_s : std_logic_vector(63 downto 0);
+  signal multiplicand : std_logic_vector(31 downto 0) := (others => '0');
+  signal multiplier   : std_logic_vector(31 downto 0) := (others => '0');
+  signal result       : std_logic_vector(63 downto 0);
+  signal feed_s       : std_logic                     := '0';
+  signal rst_n        : std_logic                     := '0';  -- [in]
+  signal sim_end_s    : std_logic                     := '0';
+  signal result_ref_s : std_logic_vector(63 downto 0);
+  signal error_s      : std_logic                     := '0';
+  signal check_acc    : std_logic                     := '0';
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c       : time                          := 10 ns;
-  signal   sys_clk      : std_logic                     := '0';
+  constant tclk_c     : time                          := 10 ns;
+  signal sys_clk      : std_logic                     := '0';
   
 begin  -- architecture behav
 
-  result_s <= std_logic_vector(unsigned(multiplicand) * unsigned(multiplier));
+  result_ref_s <= std_logic_vector(unsigned(multiplicand) * unsigned(multiplier));
   -----------------------------------------------------------------------------
   -- purpose: Generate sys clk
   -- type   : 
@@ -86,6 +87,28 @@ begin  -- architecture behav
     end loop;
     wait;
   end process sys_clk_gen;
+
+  -----------------------------------------------------------------------------
+  -- Checker
+  -----------------------------------------------------------------------------
+  checker : process
+    variable check_acc_v : std_logic := '0';
+    variable error_v     : std_logic := '0';
+  begin
+    wait until(rising_edge(feed_s));
+    while(feed_s = '1') loop
+      wait until(falling_edge(sys_clk));
+      error_v := '0';
+      if (result_ref_s /= result) then
+        error_v := '1';
+      end if;
+      check_acc_v := check_acc or error_v;
+      check_acc   <= check_acc_v;
+      error_s     <= error_v;
+    end loop;
+  end process checker;
+
+
 
   -----------------------------------------------------------------------------
   -- purpose: Write interpolator output to file

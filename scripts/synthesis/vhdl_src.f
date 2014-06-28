@@ -8,3 +8,5 @@
 ../../source/rtl/auto_multiplier.vhd
 ../../source/rtl/cpa.vhd
 ../../source/rtl/dot_operator.vhd
+../../source/rtl/auto_cpa.vhd
+../../source/rtl/cpa_wrapper.vhd

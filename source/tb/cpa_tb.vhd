@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-26
+-- Last update: 26-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ architecture behav of cpa_tb is
   
 begin  -- architecture behav
 
-  result_s <= std_logic_vector(unsigned(opa) + unsigned(opb));
+  result_ref_s <= std_logic_vector(unsigned(opa) + unsigned(opb));
   -----------------------------------------------------------------------------
   -- purpose: Generate sys clk
   -- type   : 
@@ -95,7 +95,7 @@ begin  -- architecture behav
     while(feed_s = '1') loop
       wait until(falling_edge(sys_clk));
       error_v := '0';
-      if (result_s /= result) then
+      if (result_ref_s /= result) then
         error_v := '1';
       end if;
       check_acc_v := check_acc or error_v;
@@ -156,7 +156,7 @@ begin  -- architecture behav
       read(line3, result_v);
       opa          <= opa_v;
       opb          <= opb_v;
-      result_ref_s <= result_v;
+      --result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
     feed_s    <= '0';

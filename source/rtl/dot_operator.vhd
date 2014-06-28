@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-24
--- Last update: 2014-06-24
+-- Last update: 26-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -39,6 +39,6 @@ architecture behav of dot_operator is
 begin  -- behav
 
   g2 <= g1 or (g0 and p1);
-  p2 <= p0 xor p1;
+  p2 <= p0 and p1;
 
 end behav;
