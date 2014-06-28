@@ -98,6 +98,8 @@ begin  -- behav
   -----------------------------------------------------------------------------
   -- Begin Partial Product reduction
   -- First we need to initialize all empty places in the PP array with zeros
+  -- Then the PP's will be re-arranged in the PP array according to wallace
+  -- tree concept.
   -- Then the array will be introduced to compression modules.
   -- The places initialized to zeros will be automatically optimized by tool
   -- Each three rows of the array will be introduced to compression modules
@@ -174,27 +176,6 @@ begin  -- behav
     pp_all_s <= pp_all_v;
   end process wallace_tree;
 
-  -----------------------------------------------------------------------------
-  -- Intialize all array by zero then assign occupied values to overwrite zeros
-  -----------------------------------------------------------------------------
-  --zero_init : process(pp_all_s)
-  --  variable pp_all_v : pp_all_t;
-  --begin
-  --  pp_all_v := (others => (others => '0'));
-  --  for i in 1 to 14 loop
-  --    pp_all_v(i)(2*i+34 downto 2*i) := pp_all_s(i)(2*i+34 downto 2*i);
-  --    pp_all_v(i)(2*i-2)             := pp_all_s(i)(2*i-2);
-  --  end loop;  -- i
-  --  pp_all_v(0)(35 downto 0)   := pp_all_s(0)(35 downto 0);
-  --  -----------------------------------
-  --  pp_all_v(15)(28)           := pp_all_s(15)(28);
-  --  pp_all_v(15)(63 downto 30) := pp_all_s(15)(63 downto 30);
-  --  -----------------------------------
-  --  pp_all_v(16)(30)           := pp_all_s(16)(30);
-  --  pp_all_v(16)(63 downto 32) := pp_all_s(16)(63 downto 32);
-  --  -----------------------------------
-  --  pp_all_init                <= pp_all_v;
-  --end process zero_init;
   pp_all_init <= pp_all_s;
   -----------------------------------------------------------------------------
   -- Instantiate compressors - First Stage Compression
@@ -235,7 +216,7 @@ begin  -- behav
   end generate stg2_o;
 
   -----------------------------------------------------------------------------
-  -- Instantiate compressors - Second Stage Compression
+  -- Instantiate compressors - Third Stage Compression
   -----------------------------------------------------------------------------
   stg3_o : for k in 0 to 1 generate
     stg3_i : for i in 0 to 63 generate
@@ -254,7 +235,7 @@ begin  -- behav
   stage3_fix(5) <= stage2_fix(7);
 
   -----------------------------------------------------------------------------
-  -- Instantiate compressors - Second Stage Compression
+  -- Instantiate compressors - Fourth Stage Compression
   -----------------------------------------------------------------------------
   stg4_o : for k in 0 to 1 generate
     stg4_i : for i in 0 to 63 generate
@@ -287,7 +268,7 @@ begin  -- behav
   stage5_fix(2) <= stage4_fix(3);
 
   -----------------------------------------------------------------------------
-  -- Instantiate compressors - Fifth Stage Compression
+  -- Instantiate compressors - Last Stage Compression
   -----------------------------------------------------------------------------
   stg6_i : for i in 0 to 63 generate
     three2two_1 : three2two
@@ -304,32 +285,11 @@ begin  -- behav
   addin_1 <= stage6_fix(0);
   addin_2 <= stage6_fix(1);
 
-  --pp1_s <= pp16(63) & pp15(62 downto 61) & pp14(60 downto 59) & pp13(58 downto 57) & pp12(56 downto 55) &
-  --         pp11(54 downto 53) & pp10(52 downto 51) & pp9(50 downto 49) & pp8(48 downto 47) & pp7(46 downto 45) &
-  --         pp6(44 downto 43) & pp5(42 downto 41) & pp4(40 downto 39) & pp3(38 downto 37) & pp2(36) & pp1(35 downto 0);
-
-  -- pp2 0-35
-  -- pp3 2-36
-  -- pp4 4-38
-  -- pp5 6-40
-  -- pp6 8-42
-  -- pp7 10-44
-  -- pp8 12-46
-  -- pp9 14-48
-  -- pp10 16-50
-  -- pp11 18-52
-  -- pp12 20-54
-  -- pp13 22-56
-  -- pp14 24-58
-  -- pp15 26-60
-  -- pp16 28-63
-
-  --pp2_s(35 downto 0) <= pp_all_s(1)(35 downto 0);
-  --pp2_msbs : for i in 0 to 15 generate
-  --  pp2_s(2*i+37 downto 2*i+36) <= pp_all_s(i)(2*i+37 downto 2*i+36);
-  --end generate pp2_msbs;
 
 
+  -----------------------------------------------------------------------------
+  -- For Simulation Only
+  -----------------------------------------------------------------------------
 -- pragma synthesis_off
   testres : process(pp_all_init)
     variable result_v : unsigned(63 downto 0) := (others => '0');
