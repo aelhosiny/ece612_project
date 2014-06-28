@@ -115,7 +115,7 @@ begin  -- behav
     pp_all_v(0)(63 downto 0) := pp16(63) & pp15(62 downto 61) & pp14(60 downto 59) & pp13(58 downto 57) &
                                 pp12(56 downto 55) & pp11(54 downto 53) & pp10(52 downto 51) & pp9(50 downto 49) &
                                 pp8(48 downto 47) & pp7(46 downto 45) & pp6(44 downto 43) & pp5(42 downto 41) &
-                                pp4(40 downto 39) & pp3(38 downto 37) & pp2(36) & pp1(35 downto 2) & '0' & pp1(0);
+                                pp4(40 downto 39) & pp3(38 downto 37) & pp2(36) & pp1(35 downto 0);
     
     pp_all_v(1)(63 downto 0) := pp17(63) & pp16(62 downto 61) & pp15(60 downto 59) & pp14(58 downto 57) & pp13(56 downto 55) &
                                 pp12(54 downto 53) & pp11(52 downto 51) & pp10(50 downto 49) & pp9(48 downto 47) &

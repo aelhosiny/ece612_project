@@ -82,7 +82,7 @@ architecture behav of pp_gen_rdcn is
   type   pp_t is array (0 to ppn_c-1) of std_logic_vector(32 downto 0);
   signal pp_intrm_s                     : pp_t;
   type   pp_all_t is array (0 to ppn_c-1) of std_logic_vector(63 downto 0);
-  signal pp_all_s                       : pp_all_t := (others => (others => '0'));
+  signal pp_all_s                       : pp_all_t;  -- := (others => (others => '0'));
   signal sign_vec_s                     : std_logic_vector(ppn_c-1 downto 0);
 
   signal result_test : unsigned(63 downto 0);
