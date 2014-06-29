@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 22-06-2014
+-- Last update: 30-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ architecture struct of auto_multiplier is
   signal multiplicand_pipe  : pipe_t;
 
 
-  signal multiplier_s, multiplicand_s : std_logic_vector(32 downto 0);
+  signal multiplier_s, multiplicand_s : std_logic_vector(31 downto 0);
   signal result_s                     : std_logic_vector(63 downto 0);
   
 begin  -- struct

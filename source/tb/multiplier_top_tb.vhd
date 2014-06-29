@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 26-06-2014
+-- Last update: 30-06-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -139,14 +139,14 @@ begin  -- architecture behav
   cntrl_pr : process
     file multiplier_f       : text is "$INPATH/multiplier.txt";
     file multiplicand_f     : text is "$INPATH/multiplicand.txt";
-    file ref_file_f         : text is "$INPATH/result.txt";
+    --file ref_file_f         : text is "$INPATH/result.txt";
     variable line1          : line;
     variable line2          : line;
-    variable line3          : line;
+    --variable line3          : line;
     variable multiplier_v   : std_logic_vector(31 downto 0);
     variable multiplicand_v : std_logic_vector(31 downto 0);
     variable smpl_no        : integer := 0;
-    variable result_v       : std_logic_vector(63 downto 0);
+  --variable result_v       : std_logic_vector(63 downto 0);
   begin
     wait for 5*tclk_c;
     wait until(falling_edge(sys_clk));
@@ -159,11 +159,11 @@ begin  -- architecture behav
       read(line1, multiplicand_v);
       readline(multiplier_f, line2);
       read(line2, multiplier_v);
-      readline(ref_file_f, line3);
-      read(line3, result_v);
+      --readline(ref_file_f, line3);
+      --read(line3, result_v);
       multiplicand <= multiplicand_v;
       multiplier   <= multiplier_v;
-      result_ref_s <= result_v;
+      --result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
     wait until(rising_edge(sys_clk));
