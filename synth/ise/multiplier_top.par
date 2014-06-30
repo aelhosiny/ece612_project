@@ -1,15 +1,14 @@
 Release 14.2 par P.28xd (lin64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-cheetah.eg.si-vision.com::  Mon Jun 30 15:19:22 2014
+amr-laptop::  Tue Jul 01 01:45:09 2014
 
 par -mt 4 -ol high -w multiplier_top_map.ncd multiplier_top.ncd
 multiplier_top.pcf 
 
 
 Constraints file: multiplier_top.pcf.
-Loading device for application Rf_Device from file '7a100t.nph' in environment
-/net/tiger/scratch/aelhosiny/tools/xilinx/ISE/.
+Loading device for application Rf_Device from file '7a100t.nph' in environment /media/storage/xilinx/14.2/ISE_DS/ISE/.
    "multiplier_top" is an NCD, version 3.2, device xc7a100t, package csg324, speed -3
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
@@ -28,9 +27,9 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,874 out of  63,400    2%
-    Number used as logic:                    1,874 out of  63,400    2%
-      Number using O6 output only:           1,857
+  Number of Slice LUTs:                      1,873 out of  63,400    2%
+    Number used as logic:                    1,873 out of  63,400    2%
+      Number using O6 output only:           1,856
       Number using O5 output only:               0
       Number using O5 and O6:                   17
       Number used as ROM:                        0
@@ -38,11 +37,11 @@ Slice Logic Utilization:
     Number used exclusively as route-thrus:      0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   651 out of  15,850    4%
-  Number of LUT Flip Flop pairs used:        1,905
-    Number with an unused Flip Flop:         1,735 out of   1,905   91%
-    Number with an unused LUT:                  31 out of   1,905    1%
-    Number of fully used LUT-FF pairs:         139 out of   1,905    7%
+  Number of occupied Slices:                   541 out of  15,850    3%
+  Number of LUT Flip Flop pairs used:        1,875
+    Number with an unused Flip Flop:         1,703 out of   1,875   90%
+    Number with an unused LUT:                   2 out of   1,875    1%
+    Number of fully used LUT-FF pairs:         170 out of   1,875    9%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -97,27 +96,27 @@ PAR will use up to 4 processors
 Starting Multi-threaded Router
 
 
-Phase  1  : 9547 unrouted;      REAL time: 24 secs 
+Phase  1  : 9533 unrouted;      REAL time: 18 secs 
 
-Phase  2  : 9438 unrouted;      REAL time: 24 secs 
+Phase  2  : 9427 unrouted;      REAL time: 19 secs 
 
-Phase  3  : 2559 unrouted;      REAL time: 26 secs 
+Phase  3  : 2454 unrouted;      REAL time: 21 secs 
 
-Phase  4  : 2573 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
+Phase  4  : 3526 unrouted; (Setup:320, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
 Updating file: multiplier_top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 33 secs 
+Phase  5  : 0 unrouted; (Setup:16505, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 33 secs 
+Phase  6  : 0 unrouted; (Setup:10940, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 33 secs 
+Phase  7  : 0 unrouted; (Setup:10940, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 33 secs 
+Phase  8  : 0 unrouted; (Setup:10940, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 33 secs 
-Total REAL time to Router completion: 33 secs 
-Total CPU time to Router completion (all processors): 38 secs 
+Phase  9  : 0 unrouted; (Setup:10064, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 28 secs 
+Total REAL time to Router completion: 1 mins 28 secs 
+Total CPU time to Router completion (all processors): 2 mins 14 secs 
 
 Generating "PAR" statistics.
 
@@ -128,7 +127,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |BUFGCTRL_X0Y31| No   |   90 |  0.078     |  1.181      |
+|           clk_BUFGP |BUFGCTRL_X0Y31| No   |   87 |  0.019     |  1.132      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -139,7 +138,23 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+Timing Score: 10064 (Setup: 10064, Hold: 0, Component Switching Limit: 0)
+
+WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in your design.
+
+   Review the timing report using Timing Analyzer (In ISE select "Post-Place &
+   Route Static Timing Report"). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+   Try the Design Goal and Strategies for Timing Performance(In ISE select Project -> Design Goals & Strategies) to ensure the best options
+   are set in the tools for timing closure.
+
+   Use the Xilinx "SmartXplorer" script to try special combinations of
+   options known to produce very good results.
+
+   Visit the Xilinx technical support web at http://support.xilinx.com and go to
+   either "Troubleshoot->Tech Tips->Timing & Constraints" or "
+   TechXclusives->Timing Closure" for tips and suggestions for meeting timing
+   in your design.
 
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
@@ -148,29 +163,29 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 127 MHz HIG | SETUP       |     0.008ns|     7.866ns|       0|           0
-  H 50%                                     | HOLD        |     0.418ns|            |       0|           0
+* TS_clk = PERIOD TIMEGRP "clk" 145 MHz HIG | SETUP       |    -0.919ns|     7.815ns|      26|       10064
+  H 50%                                     | HOLD        |     0.392ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
-All constraints were met.
+1 constraint not met.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 34 secs 
-Total CPU time to PAR completion (all processors): 39 secs 
+Total REAL time to PAR completion: 1 mins 29 secs 
+Total CPU time to PAR completion (all processors): 2 mins 15 secs 
 
-Peak Memory Usage:  1128 MB
+Peak Memory Usage:  1446 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
-Timing: Completed - No errors found.
+Timing: Completed - 26 errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
+Number of warning messages: 1
 Number of info messages: 0
 
 Writing design to file multiplier_top.ncd
