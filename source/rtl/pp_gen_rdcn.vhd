@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-28
+-- Last update: 2014-07-01
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ begin  -- behav
                      pp_neg2y when sdn_s(i) = "011" else
                      pp_y     when sdn_s(i) = "100" else
                      pp_negy  when sdn_s(i) = "101" else
-                     (others => '0');
+                     (others => 'X');
     sign_vec_s(i) <= '1' when sdn_s(i) = "011" or sdn_s(i) = "101" else
                      '0' when sdn_s(i) = "100" or sdn_s(i) = "010" or sdn_s(i) = "001" or sdn_s(i) = "000" else
                      'X';
