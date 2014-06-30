@@ -1,0 +1,789 @@
+Release 14.2 - xst P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vhdl_src.f"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "multiplier_top"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : multiplier_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/basic_functions.vhd" into library work
+Parsing package <basic_functions>.
+Parsing package body <basic_functions>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/final_cpa.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/sdn_gen.vhd" into library work
+Parsing entity <sdn_gen>.
+Parsing architecture <behav> of entity <sdn_gen>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_rdcn.vhd" into library work
+Parsing entity <pp_rdcn>.
+Parsing architecture <behav> of entity <pp_rdcn>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_gen_rdcn.vhd" into library work
+Parsing entity <pp_gen_rdcn>.
+Parsing architecture <behav> of entity <pp_gen_rdcn>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/multiplier_top.vhd" into library work
+Parsing entity <multiplier_top>.
+Parsing architecture <struct> of entity <multiplier_top>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/three2two.vhd" into library work
+Parsing entity <three2two>.
+Parsing architecture <behav> of entity <three2two>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/auto_multiplier.vhd" into library work
+Parsing entity <auto_multiplier>.
+Parsing architecture <struct> of entity <auto_multiplier>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/cpa.vhd" into library work
+Parsing entity <cpa>.
+Parsing architecture <behav> of entity <cpa>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/dot_operator.vhd" into library work
+Parsing entity <dot_operator>.
+Parsing architecture <behav> of entity <dot_operator>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/auto_cpa.vhd" into library work
+Parsing entity <auto_cpa>.
+Parsing architecture <behav> of entity <auto_cpa>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/cpa_wrapper.vhd" into library work
+Parsing entity <cpa_wrapper>.
+Parsing architecture <behav> of entity <cpa_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <multiplier_top> (architecture <struct>) with generics from library <work>.
+
+Elaborating entity <pp_gen_rdcn> (architecture <behav>) from library <work>.
+
+Elaborating entity <sdn_gen> (architecture <behav>) from library <work>.
+
+Elaborating entity <pp_rdcn> (architecture <behav>) from library <work>.
+
+Elaborating entity <three2two> (architecture <behav>) from library <work>.
+WARNING:HDLCompiler:634 - "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_gen_rdcn.vhd" Line 85: Net <pp_all_s[0][63]> does not have a driver.
+
+Elaborating entity <cpa> (architecture <behav>) with generics from library <work>.
+
+Elaborating entity <dot_operator> (architecture <behav>) from library <work>.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[1].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[2].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[3].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[4].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[5].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[6].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <multiplier_top>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/multiplier_top.vhd".
+        en_pipe = true
+        stages = 3
+    Found 32-bit register for signal <multiplicand_reg_s>.
+    Found 32-bit register for signal <multiplier_reg_s>.
+    Found 64-bit register for signal <result>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+Unit <multiplier_top> synthesized.
+
+Synthesizing Unit <pp_gen_rdcn>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_gen_rdcn.vhd".
+WARNING:Xst:653 - Signal <pp_all_s<0><63:36>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<1><63:37>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<1><1>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<2><63:39>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<2><3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<2><1:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<3><63:41>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<3><5>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<3><3:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<4><63:43>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<4><7>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<4><5:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<5><63:45>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<5><9>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<5><7:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<6><63:47>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<6><11>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<6><9:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<7><63:49>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<7><13>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<7><11:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<8><63:51>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<8><15>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<8><13:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<9><63:53>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<9><17>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<9><15:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<10><63:55>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<10><19>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<10><17:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<11><63:57>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<11><21>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<11><19:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<12><63:59>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<12><23>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<12><21:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<13><63:61>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<13><25>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<13><23:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<14><63>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<14><27>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<14><25:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<15><29>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<15><27:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<16><31>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <pp_all_s<16><29:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_15_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_32_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_49_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_66_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_83_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_100_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_117_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_134_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_151_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_168_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_185_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_202_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_219_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_236_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_253_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_270_OUT> created at line 118.
+    Found 33-bit 6-to-1 multiplexer for signal <GND_5_o_pp_2y[32]_mux_287_OUT> created at line 118.
+    Summary:
+	inferred  34 Multiplexer(s).
+Unit <pp_gen_rdcn> synthesized.
+
+Synthesizing Unit <sdn_gen>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/sdn_gen.vhd".
+    Summary:
+Unit <sdn_gen> synthesized.
+
+Synthesizing Unit <pp_rdcn>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd".
+WARNING:Xst:647 - Input <pp1<63:36>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp2<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp2<63:37>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp3<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp3<3:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp3<63:39>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp4<3:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp4<5:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp4<63:41>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp5<5:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp5<7:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp5<63:43>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp6<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp6<9:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp6<63:45>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp7<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp7<11:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp7<63:47>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp8<11:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp8<13:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp8<63:49>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp9<13:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp9<15:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp9<63:51>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp10<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp10<17:17>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp10<63:53>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp11<17:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp11<19:19>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp11<63:55>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp12<19:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp12<21:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp12<63:57>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp13<21:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp13<23:23>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp13<63:59>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp14<23:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp14<25:25>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp14<63:61>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp15<25:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp15<27:27>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp15<63:63>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp16<27:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp16<29:29>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp17<29:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pp17<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[0].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[1].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[2].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[3].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[4].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[0].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[1].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[2].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[3].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[0].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[1].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[0].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[1].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 258: Output port <cout> of the instance <stg5_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 274: Output port <cout> of the instance <stg6_i[63].three2two_1> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <pp_rdcn> synthesized.
+
+Synthesizing Unit <three2two>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/three2two.vhd".
+    Summary:
+Unit <three2two> synthesized.
+
+Synthesizing Unit <cpa>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd".
+        width = 64
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[32].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[33].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[34].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[35].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[36].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[37].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[38].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[39].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[40].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[41].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[42].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[43].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[44].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[45].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[46].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[47].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[48].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[49].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[50].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[51].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[52].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[53].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[54].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[55].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[56].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[57].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[58].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[59].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[60].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[61].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[62].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[63].dot_operator_1> is unconnected or connected to loadless signal.
+    Summary:
+Unit <cpa> synthesized.
+
+Synthesizing Unit <dot_operator>.
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/dot_operator.vhd".
+    Summary:
+	no macro.
+Unit <dot_operator> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 3
+ 32-bit register                                       : 2
+ 64-bit register                                       : 1
+# Multiplexers                                         : 34
+ 33-bit 2-to-1 multiplexer                             : 17
+ 33-bit 6-to-1 multiplexer                             : 17
+# Xors                                                 : 2064
+ 1-bit xor2                                            : 2064
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 128
+ Flip-Flops                                            : 128
+# Multiplexers                                         : 34
+ 33-bit 2-to-1 multiplexer                             : 17
+ 33-bit 6-to-1 multiplexer                             : 17
+# Xors                                                 : 2064
+ 1-bit xor2                                            : 2064
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[1].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[2].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[3].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[5].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[61].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[1].stg1_i[62].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[0].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[1].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[2].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[3].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[4].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[5].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[6].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[7].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[8].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[9].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[11].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[55].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[56].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[57].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[58].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[59].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[60].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[61].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[2].stg1_i[62].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[0].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[1].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[2].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[3].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[4].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[5].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[6].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[7].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[8].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[9].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[10].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[11].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[12].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[13].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[14].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[15].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[17].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[49].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[50].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[51].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[52].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[53].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[54].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[55].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[56].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[57].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[58].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[59].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[60].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[61].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[3].stg1_i[62].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[0].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[1].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[2].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[3].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[4].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[5].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[6].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[7].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[8].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[9].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[10].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[11].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[12].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[13].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[14].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[15].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[16].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[17].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[18].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[19].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[20].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[21].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[23].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[43].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[44].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[45].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[46].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[47].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[48].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[49].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[50].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[51].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[52].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[53].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[54].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[55].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[56].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[57].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[58].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[59].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[60].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[61].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg1_o[4].stg1_i[62].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[0].three2two_1>, <stg2_o[3].stg2_i[0].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[63].three2two_1>, <stg1_o[2].stg1_i[63].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[63].three2two_1>, <stg1_o[3].stg1_i[63].three2two_1> of unit <three2two> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <pp_rdcn>: instances <stg1_o[1].stg1_i[63].three2two_1>, <stg1_o[4].stg1_i[63].three2two_1> of unit <three2two> are equivalent, second instance is removed
+
+Optimizing unit <multiplier_top> ...
+
+Optimizing unit <pp_gen_rdcn> ...
+
+Optimizing unit <pp_rdcn> ...
+
+Optimizing unit <cpa> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block multiplier_top, actual ratio is 3.
+FlipFlop multiplicand_reg_s_1 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_1 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_10 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_10 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_11 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_11 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_17 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_17 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_19 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_19 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_20 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_20 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_21 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_21 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_22 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_22 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_27 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_27 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_28 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_28 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_5 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_5 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_6 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_6 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_7 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_7 connected to a primary input has been replicated
+FlipFlop multiplicand_reg_s_8 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplicand_reg_s_8 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_1 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_1 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_10 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_10 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_11 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_11 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_15 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_15 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_16 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_16 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_18 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_18 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_21 has been replicated 4 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_21 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_22 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_22 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_23 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_23 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_25 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_25 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_26 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_26 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_27 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_27 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_28 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_28 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_29 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_29 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_30 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_30 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_31 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_31 connected to a primary input has been replicated
+FlipFlop multiplier_reg_s_7 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop multiplier_reg_s_7 connected to a primary input has been replicated
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 174
+ Flip-Flops                                            : 174
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : multiplier_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1902
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 47
+#      LUT3                        : 260
+#      LUT4                        : 157
+#      LUT5                        : 844
+#      LUT6                        : 578
+#      MUXF7                       : 13
+#      VCC                         : 1
+# FlipFlops/Latches                : 174
+#      FDC                         : 174
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 129
+#      IBUF                        : 65
+#      OBUF                        : 64
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             174  out of  126800     0%  
+ Number of Slice LUTs:                 1887  out of  63400     2%  
+    Number used as Logic:              1887  out of  63400     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1996
+   Number with an unused Flip Flop:    1822  out of   1996    91%  
+   Number with an unused LUT:           109  out of   1996     5%  
+   Number of fully used LUT-FF pairs:    65  out of   1996     3%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         130
+ Number of bonded IOBs:                 130  out of    210    61%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 174   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.984ns (Maximum Frequency: 143.187MHz)
+   Minimum input arrival time before clock: 1.150ns
+   Maximum output required time after clock: 0.640ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.984ns (frequency: 143.187MHz)
+  Total number of paths / destination ports: 12695402 / 64
+-------------------------------------------------------------------------
+Delay:               6.984ns (Levels of Logic = 12)
+  Source:            multiplier_reg_s_5 (FF)
+  Destination:       result_reg_s_48 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: multiplier_reg_s_5 to result_reg_s_48
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             75   0.361   0.797  multiplier_reg_s_5 (multiplier_reg_s_5)
+     LUT5:I0->O            4   0.097   0.525  pp_gen_rdcn_1/Mmux_pp_intrm_s<3>21 (pp_gen_rdcn_1/pp_intrm_s<3><10>)
+     LUT3:I0->O            3   0.097   0.305  pp_gen_rdcn_1/pp_rdcn_1/stg1_o[1].stg1_i[16].three2two_1/Mxor_sum_xo<0>1 (pp_gen_rdcn_1/pp_rdcn_1/stage1_sum<1><16>)
+     LUT5:I4->O            2   0.097   0.299  pp_gen_rdcn_1/pp_rdcn_1/stg2_o[0].stg2_i[16].three2two_1/Mxor_sum_xo<0>1 (pp_gen_rdcn_1/pp_rdcn_1/stage2_sum<0><16>)
+     LUT5:I4->O            3   0.097   0.566  pp_gen_rdcn_1/pp_rdcn_1/stg3_o[0].stg3_i[16].three2two_1/cout1 (pp_gen_rdcn_1/pp_rdcn_1/stage3_carry<0><17>)
+     LUT6:I2->O            4   0.097   0.309  pp_gen_rdcn_1/pp_rdcn_1/stg5_i[18].three2two_1/Mxor_sum_xo<0>1 (pp_gen_rdcn_1/pp_rdcn_1/stage5_sum<18>)
+     LUT6:I5->O            4   0.097   0.525  pp_gen_rdcn_1/pp_rdcn_1/stg6_i[18].three2two_1/Mxor_sum_xo<0>1 (adder_in1<18>)
+     LUT4:I1->O            5   0.097   0.702  cpa_1/tree_o[2].tree_i[21].dot_operator_1/g211 (cpa_1/tree_o[2].tree_i[21].dot_operator_1/g21)
+     LUT5:I0->O            1   0.097   0.295  cpa_1/tree_o[5].tree_i[31].dot_operator_1/g21_SW0_SW0 (N249)
+     LUT6:I5->O            2   0.097   0.283  cpa_1/tree_o[5].tree_i[31].dot_operator_1/g21 (cpa_1/tree_o[5].tree_i[31].dot_operator_1/g21)
+     MUXF7:S->O            3   0.335   0.305  cpa_1/g_a<5><31>2_SW0_SW1 (N284)
+     LUT6:I5->O            2   0.097   0.299  cpa_1/g_a<5><31>2 (cpa_1/g_a<5><31>)
+     LUT6:I5->O            1   0.097   0.000  cpa_1/Mxor_result<48>_xo<0>1 (result_s<48>)
+     FDC:D                     0.008          result_reg_s_48
+    ----------------------------------------
+    Total                      6.984ns (1.771ns logic, 5.213ns route)
+                                       (25.4% logic, 74.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 284 / 284
+-------------------------------------------------------------------------
+Offset:              1.150ns (Levels of Logic = 2)
+  Source:            rstn (PAD)
+  Destination:       multiplicand_reg_s_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rstn to multiplicand_reg_s_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.279  rstn_IBUF (rstn_IBUF)
+     INV:I->O            174   0.113   0.408  rstn_inv1_INV_0 (rstn_inv)
+     FDC:CLR                   0.349          multiplicand_reg_s_0
+    ----------------------------------------
+    Total                      1.150ns (0.463ns logic, 0.687ns route)
+                                       (40.3% logic, 59.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            result_reg_s_63 (FF)
+  Destination:       result<63> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: result_reg_s_63 to result<63>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.361   0.279  result_reg_s_63 (result_reg_s_63)
+     OBUF:I->O                 0.000          result_63_OBUF (result<63>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.984|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 51.00 secs
+Total CPU time to Xst completion: 50.34 secs
+ 
+--> 
+
+
+Total memory usage is 568596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  202 (   0 filtered)
+Number of infos    :   78 (   0 filtered)
+
