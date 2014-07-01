@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-06-28
+-- Last update: 2014-07-01
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ begin  -- architecture behav
 
 
   -----------------------------------------------------------------------------
-  -- purpose: Write interpolator output to file
+  -- purpose: Write output to file
   -- type   : 
   -- inputs : 
   -- outputs:
@@ -119,12 +119,12 @@ begin  -- architecture behav
   write_pr : process(feed_s, sys_clk)
     variable line_o_v    : line;
     variable data_out_v  : integer;
-    file result_f        : text open write_mode is "$OUTPATH/intrp_out.txt";
+    file result_f        : text open write_mode is "$OUTPATH/result_out.txt";
     variable outsmp_no_v : integer := 0;
   begin
     if (falling_edge(sys_clk)) and (feed_s = '1') then
       outsmp_no_v := outsmp_no_v + 1;
-      hwrite(line_o_v, result);
+      write(line_o_v, result);
       writeline(result_f, line_o_v);
     end if;
   end process write_pr;
@@ -139,14 +139,11 @@ begin  -- architecture behav
   cntrl_pr : process
     file multiplier_f       : text is "$INPATH/multiplier.txt";
     file multiplicand_f     : text is "$INPATH/multiplicand.txt";
-    file ref_file_f         : text is "$INPATH/result.txt";
     variable line1          : line;
     variable line2          : line;
-    variable line3          : line;
     variable multiplier_v   : std_logic_vector(31 downto 0);
     variable multiplicand_v : std_logic_vector(31 downto 0);
     variable smpl_no        : integer := 0;
-    variable result_v       : std_logic_vector(63 downto 0);
   begin
     wait for 5*tclk_c;
     wait until(falling_edge(sys_clk));
@@ -159,11 +156,8 @@ begin  -- architecture behav
       read(line1, multiplicand_v);
       readline(multiplier_f, line2);
       read(line2, multiplier_v);
-      readline(ref_file_f, line3);
-      read(line3, result_v);
       multiplicand <= multiplicand_v;
       multiplier   <= multiplier_v;
-      --result_ref_s <= result_v;
       wait until(rising_edge(sys_clk));
     end loop;
     wait until(rising_edge(sys_clk));
