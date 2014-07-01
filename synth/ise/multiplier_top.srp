@@ -93,33 +93,40 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/basic_functions.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/basic_functions.vhd" into library work
 Parsing package <basic_functions>.
 Parsing package body <basic_functions>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/sdn_gen.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/final_cpa.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/sdn_gen.vhd" into library work
 Parsing entity <sdn_gen>.
 Parsing architecture <behav> of entity <sdn_gen>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/pp_rdcn.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_rdcn.vhd" into library work
 Parsing entity <pp_rdcn>.
 Parsing architecture <behav> of entity <pp_rdcn>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/pp_gen_rdcn.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_gen_rdcn.vhd" into library work
 Parsing entity <pp_gen_rdcn>.
 Parsing architecture <behav> of entity <pp_gen_rdcn>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/multiplier_top.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/multiplier_top.vhd" into library work
 Parsing entity <multiplier_top>.
 Parsing architecture <struct> of entity <multiplier_top>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/three2two.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/three2two.vhd" into library work
 Parsing entity <three2two>.
 Parsing architecture <behav> of entity <three2two>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/auto_multiplier.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/auto_multiplier.vhd" into library work
 Parsing entity <auto_multiplier>.
 Parsing architecture <struct> of entity <auto_multiplier>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/cpa.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/cpa.vhd" into library work
 Parsing entity <cpa>.
 Parsing architecture <behav> of entity <cpa>.
-Parsing VHDL file "/home/amr/projects/ece612_project//source/rtl/dot_operator.vhd" into library work
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/dot_operator.vhd" into library work
 Parsing entity <dot_operator>.
 Parsing architecture <behav> of entity <dot_operator>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/auto_cpa.vhd" into library work
+Parsing entity <auto_cpa>.
+Parsing architecture <behav> of entity <auto_cpa>.
+Parsing VHDL file "/scratch3/aelhosiny/masters/ece612_project//source/rtl/cpa_wrapper.vhd" into library work
+Parsing entity <cpa_wrapper>.
+Parsing architecture <behav> of entity <cpa_wrapper>.
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -134,24 +141,24 @@ Elaborating entity <sdn_gen> (architecture <behav>) from library <work>.
 Elaborating entity <pp_rdcn> (architecture <behav>) from library <work>.
 
 Elaborating entity <three2two> (architecture <behav>) from library <work>.
-WARNING:HDLCompiler:634 - "/home/amr/projects/ece612_project//source/rtl/pp_gen_rdcn.vhd" Line 85: Net <pp_all_s[0][63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/scratch3/aelhosiny/masters/ece612_project//source/rtl/pp_gen_rdcn.vhd" Line 85: Net <pp_all_s[0][63]> does not have a driver.
 
 Elaborating entity <cpa> (architecture <behav>) with generics from library <work>.
 
 Elaborating entity <dot_operator> (architecture <behav>) from library <work>.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[1].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[2].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[3].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[4].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[5].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[6].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[1].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[2].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[3].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[4].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[5].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86. All outputs of instance <tree_o[6].tree_i[63].dot_operator_1> of block <dot_operator> are unconnected in block <cpa>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <multiplier_top>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/multiplier_top.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/multiplier_top.vhd".
         en_pipe = true
         stages = 3
     Found 32-bit register for signal <multiplicand_reg_s>.
@@ -162,7 +169,7 @@ Synthesizing Unit <multiplier_top>.
 Unit <multiplier_top> synthesized.
 
 Synthesizing Unit <pp_gen_rdcn>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/pp_gen_rdcn.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_gen_rdcn.vhd".
 WARNING:Xst:653 - Signal <pp_all_s<0><63:36>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <pp_all_s<1><63:37>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <pp_all_s<1><1>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -231,12 +238,12 @@ WARNING:Xst:653 - Signal <pp_all_s<16><29:0>> is used but never assigned. This s
 Unit <pp_gen_rdcn> synthesized.
 
 Synthesizing Unit <sdn_gen>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/sdn_gen.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/sdn_gen.vhd".
     Summary:
 Unit <sdn_gen> synthesized.
 
 Synthesizing Unit <pp_rdcn>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd".
 WARNING:Xst:647 - Input <pp1<63:36>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <pp2<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <pp2<63:37>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -283,70 +290,70 @@ WARNING:Xst:647 - Input <pp16<27:0>> is never used. This port will be preserved 
 WARNING:Xst:647 - Input <pp16<29:29>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <pp17<29:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <pp17<31:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[0].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[1].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[2].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[3].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[4].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[0].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[1].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[2].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[3].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[0].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[1].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[0].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[1].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 258: Output port <cout> of the instance <stg5_i[63].three2two_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/pp_rdcn.vhd" line 274: Output port <cout> of the instance <stg6_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[0].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[1].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[2].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[3].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 186: Output port <cout> of the instance <stg1_o[4].stg1_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[0].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[1].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[2].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 206: Output port <cout> of the instance <stg2_o[3].stg2_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[0].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 223: Output port <cout> of the instance <stg3_o[1].stg3_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[0].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 242: Output port <cout> of the instance <stg4_o[1].stg4_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 258: Output port <cout> of the instance <stg5_i[63].three2two_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/pp_rdcn.vhd" line 274: Output port <cout> of the instance <stg6_i[63].three2two_1> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <pp_rdcn> synthesized.
 
 Synthesizing Unit <three2two>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/three2two.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/three2two.vhd".
     Summary:
 Unit <three2two> synthesized.
 
 Synthesizing Unit <cpa>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/cpa.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd".
         width = 64
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[32].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[33].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[34].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[35].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[36].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[37].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[38].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[39].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[40].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[41].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[42].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[43].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[44].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[45].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[46].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[47].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[48].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[49].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[50].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[51].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[52].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[53].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[54].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[55].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[56].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[57].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[58].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[59].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[60].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[61].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[62].dot_operator_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/amr/projects/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[63].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[32].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[33].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[34].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[35].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[36].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[37].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[38].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[39].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[40].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[41].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[42].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[43].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[44].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[45].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[46].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[47].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[48].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[49].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[50].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[51].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[52].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[53].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[54].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[55].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[56].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[57].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[58].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[59].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[60].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[61].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[62].dot_operator_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/scratch3/aelhosiny/masters/ece612_project/source/rtl/cpa.vhd" line 86: Output port <p2> of the instance <tree_o[6].tree_i[63].dot_operator_1> is unconnected or connected to loadless signal.
     Summary:
 Unit <cpa> synthesized.
 
 Synthesizing Unit <dot_operator>.
-    Related source file is "/home/amr/projects/ece612_project/source/rtl/dot_operator.vhd".
+    Related source file is "/scratch3/aelhosiny/masters/ece612_project/source/rtl/dot_operator.vhd".
     Summary:
 	no macro.
 Unit <dot_operator> synthesized.
@@ -768,13 +775,13 @@ clk            |    6.984|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 38.00 secs
-Total CPU time to Xst completion: 37.62 secs
+Total REAL time to Xst completion: 52.00 secs
+Total CPU time to Xst completion: 51.50 secs
  
 --> 
 
 
-Total memory usage is 518876 kilobytes
+Total memory usage is 568540 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  202 (   0 filtered)
