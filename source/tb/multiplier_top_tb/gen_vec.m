@@ -33,8 +33,8 @@ multiplier = round(multiplier.*2^32);
 % dlmwrite('multiplier_mat.txt', multiplier, '');
 
 
-multiplicand_x = dec2bin(multiplicand);
-multiplier_x = dec2bin(multiplier);
+multiplicand_x = dec2bin(multiplicand,32);
+multiplier_x = dec2bin(multiplier,32);
 
 dlmwrite('multiplicand_mat.txt', multiplicand_x, '');
 dlmwrite('multiplier_mat.txt', multiplier_x, '');
@@ -47,8 +47,8 @@ multiplier_c = dlmread('multiplier_c.txt');
 % multiplicand_cb = dec2bin(typecast(multiplicand_c, 'uint32'));
 % multiplier_cb = dec2bin(typecast(multiplier_c, 'uint32'));
 
-multiplicand_cb = dec2bin(multiplicand_c);
-multiplier_cb = dec2bin(multiplier_c);
+multiplicand_cb = dec2bin(multiplicand_c,32);
+multiplier_cb = dec2bin(multiplier_c,32);
 
 
 dlmwrite('multiplicand_cb.txt', multiplicand_cb, '');
