@@ -11,16 +11,15 @@ int main()
 	int temp = sizeof(result);
 	printf("size of result is %d\n", temp);
 	// ***** Open o/p files
-	FILE *opa_f = fopen("multiplicand.txt", "w");
-	FILE *opb_f = fopen("multiplier.txt", "w");
-	FILE *res_f = fopen("result.txt", "w");
+	FILE *opa_f = fopen("multiplicand_c.txt", "w");
+	FILE *opb_f = fopen("multiplier_c.txt", "w");
+	FILE *res_f = fopen("result_c.txt", "w");
 
 	int i;
 	for (i=0; i<nsamples; i++) {
 		multiplicand = rand();
 		multiplier = rand();
 		result = (unsigned long long) multiplicand * (unsigned long long) multiplier;
-// 		printf("multiplicand * multiplier = %u x %u = %llu\n", multiplicand, multiplier, result);
 		fprintf(opa_f, "%u\n", multiplicand);
 		fprintf(opb_f, "%u\n", multiplier);
 		fprintf(res_f, "%llu\n", result);
