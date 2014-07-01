@@ -6,7 +6,7 @@
 -- Author     : amr  <amr@amr-laptop>
 -- Company    : 
 -- Created    : 2014-06-20
--- Last update: 2014-07-01
+-- Last update: 01-07-2014
 -- Platform   : 
 -- Standard   : VHDL'87
 -------------------------------------------------------------------------------
@@ -55,20 +55,20 @@ architecture behav of multiplier_top_tb is
   -----------------------------------------------------------------------------
   -- Signals declarations
   -----------------------------------------------------------------------------
-  signal   multiplicand : std_logic_vector(31 downto 0) := (others => '0');
-  signal   multiplier   : std_logic_vector(31 downto 0) := (others => '0');
-  signal   result       : std_logic_vector(63 downto 0);
-  signal   feed_s       : std_logic                     := '0';
-  signal   rst_n        : std_logic                     := '0';  -- [in]
-  signal   sim_end_s    : std_logic                     := '0';
-  signal   result_ref_s : std_logic_vector(63 downto 0);
-  signal   error_s      : std_logic                     := '0';
-  signal   check_acc    : std_logic                     := '0';
+  signal multiplicand : std_logic_vector(31 downto 0) := (others => '0');
+  signal multiplier   : std_logic_vector(31 downto 0) := (others => '0');
+  signal result       : std_logic_vector(63 downto 0);
+  signal feed_s       : std_logic                     := '0';
+  signal rst_n        : std_logic                     := '0';  -- [in]
+  signal sim_end_s    : std_logic                     := '0';
+  signal result_ref_s : std_logic_vector(63 downto 0);
+  signal error_s      : std_logic                     := '0';
+  signal check_acc    : std_logic                     := '0';
   -----------------------------------------------------------------------------
   -- Constants declarations
   -----------------------------------------------------------------------------
-  constant tclk_c       : time                          := 10 ns;
-  signal   sys_clk      : std_logic                     := '0';
+  constant tclk_c     : time                          := 10 ns;
+  signal sys_clk      : std_logic                     := '0';
   
 begin  -- architecture behav
 
@@ -120,12 +120,16 @@ begin  -- architecture behav
     variable line_o_v    : line;
     variable data_out_v  : integer;
     file result_f        : text open write_mode is "$OUTPATH/result_out.txt";
+    file result_ref      : text open write_mode is "$OUTPATH/result_ref.txt";
+    variable line2       : line;
     variable outsmp_no_v : integer := 0;
   begin
     if (falling_edge(sys_clk)) and (feed_s = '1') then
       outsmp_no_v := outsmp_no_v + 1;
       write(line_o_v, result);
       writeline(result_f, line_o_v);
+      write(line2, result_ref_s);
+      writeline(result_ref, line2);
     end if;
   end process write_pr;
 
